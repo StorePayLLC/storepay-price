@@ -1,0 +1,15 @@
+fragment user on User {
+    id
+    firstName
+    language
+    email
+    phone
+    confirmedAt
+    state
+    status
+    dob
+    citizenIdNumber
+    externalKycId
+    gender
+    language
+}

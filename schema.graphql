@@ -1,0 +1,1005 @@
+# This file was generated. Do not edit manually.
+
+schema {
+    query: Query
+}
+
+"Requires that exactly one field must be supplied and that field must not be `null`."
+directive @oneOf on INPUT_OBJECT
+
+"An object with an ID."
+interface BaseModelInterface {
+    createdAt: ISO8601DateTime!
+    "ID of the object."
+    id: ID!
+    updatedAt: ISO8601DateTime!
+}
+
+"An object with an ID."
+interface Node {
+    "ID of the object."
+    id: ID!
+}
+
+"An object with an ID."
+interface WalletInterface {
+    account: String
+    balance: Float
+    createdAt: ISO8601DateTime!
+    currency: String
+    expiresAt: ISO8601DateTime
+    "ID of the object."
+    id: ID!
+    name: String
+    owner: Node
+    preferences: JSON
+    startsAt: ISO8601DateTime
+    status: WalletStatus
+    "Returns list of transactions"
+    transactions(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: WalletTransactionFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): TransactionConnection!
+    type: String
+    updatedAt: ISO8601DateTime!
+}
+
+"Union type for Loan, Modification, Settlement or User"
+union TransactionSourceUnion = Offer | User
+
+"StorePay Merchant."
+type Merchant implements BaseModelInterface & Node {
+    address: String
+    applicantId: String
+    country: String
+    createdAt: ISO8601DateTime!
+    currency: String
+    description: String
+    email: String
+    feePercent: Float
+    "ID of the object."
+    id: ID!
+    "Returns list of Merchant Users"
+    merchantUsers(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: MerchantUserFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): MerchantUserConnection!
+    name: String
+    number: String
+    phone: String
+    preferences: JSON
+    registrationNumber: String
+    rejectedAt: ISO8601DateTime
+    spcWallet: WalletCrypto
+    startedAt: ISO8601DateTime
+    state: State
+    status: MerchantStatus
+    "Returns list of Merchant tokens"
+    tokens(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: TokenFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): TokenConnection!
+    updatedAt: ISO8601DateTime!
+    verifiedAt: ISO8601DateTime
+}
+
+"The connection type for Merchant."
+type MerchantConnection {
+    "A list of edges."
+    edges: [MerchantEdge!]!
+    "Metric response for chart / reporting"
+    metrics(dateField: String!, granularity: MetricGranularity!, sumField: String): [MetricResponse!]!
+    "A list of nodes."
+    nodes: [Merchant!]!
+    "Information to aid in pagination."
+    pageInfo: PageInfo!
+    sum(field: String!): Float!
+    totalCount: Int!
+}
+
+"An edge in a connection."
+type MerchantEdge {
+    "A cursor for use in pagination."
+    cursor: String!
+    "The item at the end of the edge."
+    node: Merchant!
+}
+
+"StorePay MerchantUser."
+type MerchantUser implements BaseModelInterface & Node {
+    createdAt: ISO8601DateTime!
+    "ID of the object."
+    id: ID!
+    merchant: Merchant
+    merchantId: ID
+    role: UserRole!
+    status: UserStatus!
+    updatedAt: ISO8601DateTime!
+    user: MerchantUser
+    userId: ID
+}
+
+"The connection type for MerchantUser."
+type MerchantUserConnection {
+    "A list of edges."
+    edges: [MerchantUserEdge!]!
+    "Metric response for chart / reporting"
+    metrics(dateField: String!, granularity: MetricGranularity!, sumField: String): [MetricResponse!]!
+    "A list of nodes."
+    nodes: [MerchantUser!]!
+    "Information to aid in pagination."
+    pageInfo: PageInfo!
+    sum(field: String!): Float!
+    totalCount: Int!
+}
+
+"An edge in a connection."
+type MerchantUserEdge {
+    "A cursor for use in pagination."
+    cursor: String!
+    "The item at the end of the edge."
+    node: MerchantUser!
+}
+
+"Generic response for a chart / metric"
+type MetricResponse {
+    label: String!
+    value: Float!
+}
+
+type Offer implements BaseModelInterface & Node {
+    amount: Float
+    callbackUrl: String
+    canceledAt: ISO8601DateTime
+    confirmedAt: ISO8601DateTime
+    createdAt: ISO8601DateTime!
+    currency: String
+    description: String
+    expiredAt: ISO8601DateTime
+    externalId: String
+    externalPayload: JSON
+    failedAt: ISO8601DateTime
+    feePercent: Float
+    "ID of the object."
+    id: ID!
+    merchant: Merchant
+    merchantId: ID
+    number: String
+    preferences: JSON
+    rate: Float
+    refundedAt: ISO8601DateTime
+    rejectedAt: ISO8601DateTime
+    respondBy: Node
+    status: OfferStatus
+    updatedAt: ISO8601DateTime!
+    user: User
+    userId: ID
+}
+
+"The connection type for Offer."
+type OfferConnection {
+    "A list of edges."
+    edges: [OfferEdge!]!
+    "Metric response for chart / reporting"
+    metrics(dateField: String!, granularity: MetricGranularity!, sumField: String): [MetricResponse!]!
+    "A list of nodes."
+    nodes: [Offer!]!
+    "Information to aid in pagination."
+    pageInfo: PageInfo!
+    sum(field: String!): Float!
+    totalCount: Int!
+}
+
+"An edge in a connection."
+type OfferEdge {
+    "A cursor for use in pagination."
+    cursor: String!
+    "The item at the end of the edge."
+    node: Offer!
+}
+
+"Information about pagination in a connection."
+type PageInfo {
+    "When paginating forwards, the cursor to continue."
+    endCursor: String
+    "When paginating forwards, are there more items?"
+    hasNextPage: Boolean!
+    "When paginating backwards, are there more items?"
+    hasPreviousPage: Boolean!
+    "When paginating backwards, the cursor to continue."
+    startCursor: String
+}
+
+type Query {
+    "Return current logged in user info"
+    me: User
+    "Returns list of Merchant tokens"
+    merchantTokens(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: TokenFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): TokenConnection!
+    "Returns list of Merchant Users"
+    merchantUsers(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: MerchantUserFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): MerchantUserConnection!
+    "Returns list of Merchants"
+    merchants(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: MerchantFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): MerchantConnection!
+    "Fetches an object given its ID."
+    node(
+        "ID of the object."
+        id: ID!
+    ): Node
+    "Fetches a list of objects given a list of IDs."
+    nodes(
+        "ID of the object."
+        ids: [ID!]!
+    ): [Node!]
+    "Returns list of offers"
+    offers(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: OfferFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): OfferConnection!
+    "Returns list of users"
+    users(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: UserFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): UserConnection!
+    "Returns list of transactions"
+    walletTransactions(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: WalletTransactionFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): TransactionConnection!
+    "Returns list of wallets"
+    wallets(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: WalletFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): WalletInterfaceConnection!
+}
+
+type Token implements BaseModelInterface & Node {
+    createdAt: ISO8601DateTime!
+    "ID of the object."
+    id: ID!
+    lastUsedAt: ISO8601DateTime
+    merchant: Merchant
+    merchantId: ID
+    publicKey: String
+    secretKey: String
+    updatedAt: ISO8601DateTime!
+}
+
+"The connection type for Token."
+type TokenConnection {
+    "A list of edges."
+    edges: [TokenEdge!]!
+    "Metric response for chart / reporting"
+    metrics(dateField: String!, granularity: MetricGranularity!, sumField: String): [MetricResponse!]!
+    "A list of nodes."
+    nodes: [Token!]!
+    "Information to aid in pagination."
+    pageInfo: PageInfo!
+    sum(field: String!): Float!
+    totalCount: Int!
+}
+
+"An edge in a connection."
+type TokenEdge {
+    "A cursor for use in pagination."
+    cursor: String!
+    "The item at the end of the edge."
+    node: Token!
+}
+
+type Transaction implements BaseModelInterface & Node {
+    amount: Float
+    authorizedAt: ISO8601DateTime
+    authorizedById: ID
+    balance: Float
+    category: TransactionCategory
+    createdAt: ISO8601DateTime!
+    description: String
+    dueDate: ISO8601DateTime
+    "ID of the object."
+    id: ID!
+    nonce: String
+    number: String!
+    preferences: JSON
+    response: JSON
+    source: TransactionSourceUnion
+    sourceId: ID
+    sourceType: String
+    status: TransactionStatus!
+    transactionAt: ISO8601DateTime
+    typeCode: WalletTransactionTypeCode
+    updatedAt: ISO8601DateTime!
+    wallet: WalletInterface!
+    walletId: ID!
+    withdrawTransaction: Transaction
+    withdrawTransactionId: ID
+}
+
+"The connection type for Transaction."
+type TransactionConnection {
+    "A list of edges."
+    edges: [TransactionEdge!]!
+    "Metric response for chart / reporting"
+    metrics(dateField: String!, granularity: MetricGranularity!, sumField: String): [MetricResponse!]!
+    "A list of nodes."
+    nodes: [Transaction!]!
+    "Information to aid in pagination."
+    pageInfo: PageInfo!
+    sum(field: String!): Float!
+    totalCount: Int!
+}
+
+"An edge in a connection."
+type TransactionEdge {
+    "A cursor for use in pagination."
+    cursor: String!
+    "The item at the end of the edge."
+    node: Transaction!
+}
+
+"Representation of a StorePay user."
+type User implements BaseModelInterface & Node {
+    citizenIdNumber: String
+    confirmedAt: ISO8601DateTime
+    createdAt: ISO8601DateTime!
+    dob: ISO8601Date
+    email: String
+    externalKycId: String
+    firstName: String
+    gender: Gender
+    "ID of the object."
+    id: ID!
+    language: String
+    "Returns list of Merchant Users"
+    merchantUsers(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: MerchantUserFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): MerchantUserConnection!
+    offers: [Offer!]
+    phone: String
+    spcWallet: WalletCrypto
+    state: KycState
+    status: Status
+    updatedAt: ISO8601DateTime!
+    username: String
+}
+
+"The connection type for User."
+type UserConnection {
+    "A list of edges."
+    edges: [UserEdge!]!
+    "Metric response for chart / reporting"
+    metrics(dateField: String!, granularity: MetricGranularity!, sumField: String): [MetricResponse!]!
+    "A list of nodes."
+    nodes: [User!]!
+    "Information to aid in pagination."
+    pageInfo: PageInfo!
+    sum(field: String!): Float!
+    totalCount: Int!
+}
+
+"An edge in a connection."
+type UserEdge {
+    "A cursor for use in pagination."
+    cursor: String!
+    "The item at the end of the edge."
+    node: User!
+}
+
+type WalletCrypto implements BaseModelInterface & Node & WalletInterface {
+    account: String
+    balance: Float
+    createdAt: ISO8601DateTime!
+    currency: String
+    expiresAt: ISO8601DateTime
+    "ID of the object."
+    id: ID!
+    name: String
+    owner: Node
+    preferences: JSON
+    startsAt: ISO8601DateTime
+    status: WalletStatus
+    "Returns list of transactions"
+    transactions(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: WalletTransactionFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): TransactionConnection!
+    type: String
+    updatedAt: ISO8601DateTime!
+}
+
+type WalletFiat implements BaseModelInterface & Node & WalletInterface {
+    account: String
+    balance: Float
+    createdAt: ISO8601DateTime!
+    currency: String
+    expiresAt: ISO8601DateTime
+    "ID of the object."
+    id: ID!
+    name: String
+    owner: Node
+    preferences: JSON
+    startsAt: ISO8601DateTime
+    status: WalletStatus
+    "Returns list of transactions"
+    transactions(
+        "Returns the elements in the list that come after the specified cursor."
+        after: String,
+        "Returns the elements in the list that come before the specified cursor."
+        before: String,
+        filter: WalletTransactionFilter,
+        "Returns the first _n_ elements from the list."
+        first: Int,
+        "Returns the last _n_ elements from the list."
+        last: Int,
+        "Returns the elements skipping _n_ from the list."
+        offset: Int,
+        "Sorting functionality"
+        sort: SortFilter
+    ): TransactionConnection!
+    type: String
+    updatedAt: ISO8601DateTime!
+}
+
+"The connection type for WalletInterface."
+type WalletInterfaceConnection {
+    "A list of edges."
+    edges: [WalletInterfaceEdge!]!
+    "Metric response for chart / reporting"
+    metrics(dateField: String!, granularity: MetricGranularity!, sumField: String): [MetricResponse!]!
+    "A list of nodes."
+    nodes: [WalletInterface!]!
+    "Information to aid in pagination."
+    pageInfo: PageInfo!
+    sum(field: String!): Float!
+    totalCount: Int!
+}
+
+"An edge in a connection."
+type WalletInterfaceEdge {
+    "A cursor for use in pagination."
+    cursor: String!
+    "The item at the end of the edge."
+    node: WalletInterface!
+}
+
+enum Gender {
+    "female"
+    female
+    "male"
+    male
+    "undefined"
+    undefined
+}
+
+enum KycState {
+    FACE_COMPARE_FAILED
+    FACE_COMPARE_VERIFIED
+    FACE_LIVENESS_FAILED
+    FACE_LIVENESS_VERIFIED
+    PENDING
+    REJECTED
+    VERIFIED
+}
+
+enum MerchantStatus {
+    "active"
+    active
+    "inactive"
+    inactive
+}
+
+enum MetricGranularity {
+    "DAY"
+    day
+    "HOUR"
+    hour
+    "MONTH"
+    month
+    "WEEK"
+    week
+    "YEAR"
+    year
+}
+
+enum OfferStatus {
+    "canceled"
+    canceled
+    "confirmed"
+    confirmed
+    "expired"
+    expired
+    "failed"
+    failed
+    "pending"
+    pending
+    "processing"
+    processing
+    "refunded"
+    refunded
+    "rejected"
+    rejected
+}
+
+"Sort Direction"
+enum SortDirection {
+    "Ascending"
+    asc
+    "Descending"
+    desc
+}
+
+enum State {
+    "pending"
+    pending
+    "rejected"
+    rejected
+    "started"
+    started
+    "verified"
+    verified
+}
+
+enum Status {
+    "active"
+    active
+    "banned"
+    banned
+    "deleted"
+    deleted
+    "inactive"
+    inactive
+    "pending"
+    pending
+    "suspended"
+    suspended
+}
+
+enum TransactionCategory {
+    "deposit"
+    deposit
+    "locked"
+    locked
+    "transfer"
+    transfer
+    "unlock"
+    unlock
+    "withdraw"
+    withdraw
+}
+
+enum TransactionStatus {
+    "authorized"
+    authorized
+    "pending"
+    pending
+    "rejected"
+    rejected
+}
+
+enum UserRole {
+    "admin"
+    admin
+    "billing_manager"
+    billing_manager
+    "developer"
+    developer
+}
+
+enum UserStatus {
+    "active"
+    active
+    "inactive"
+    inactive
+}
+
+enum WalletStatus {
+    "active"
+    active
+    "closed"
+    closed
+    "locked"
+    locked
+}
+
+enum WalletTransactionTypeCode {
+    "credit"
+    credit
+    "debit"
+    debit
+}
+
+"An ISO 8601-encoded date"
+scalar ISO8601Date
+
+"An ISO 8601-encoded datetime"
+scalar ISO8601DateTime
+
+"Represents untyped JSON"
+scalar JSON
+
+input BoolFilter {
+    "equals to"
+    eq: Boolean
+    "not equals to"
+    notEq: Boolean
+    "is null ?"
+    notNull: Boolean
+    "is null ?"
+    null: Boolean
+}
+
+input DateFilter {
+    "equals to"
+    eq: String
+    "Greater than"
+    gt: String
+    "Greater than or equals"
+    gteq: String
+    "Less than"
+    lt: String
+    "Less than or equals"
+    lteq: String
+    "not equals to"
+    notEq: String
+    "is null ?"
+    notNull: Boolean
+    "is null ?"
+    null: Boolean
+}
+
+input EnumStringFilter {
+    "equals to"
+    eq: String
+    "in: Matches any values in giver array"
+    in: [String!]
+    "not equals to"
+    notEq: String
+    "in: Matches none of values in giver array"
+    notIn: [String!]
+    "is null ?"
+    notNull: Boolean
+    "is null ?"
+    null: Boolean
+}
+
+input IDFilter {
+    "is null ?"
+    blank: Boolean
+    "equals to"
+    eq: ID
+    "Greater than"
+    gt: Int
+    "Greater than or equals"
+    gteq: Int
+    "in: Matches any values in giver array"
+    in: [ID!]
+    "Less than"
+    lt: Int
+    "Less than or equals"
+    lteq: Int
+    "not equals to"
+    notEq: ID
+    "in: Matches none of values in giver array"
+    notIn: [ID!]
+    "Starts with"
+    start: Int
+}
+
+input IntFilter {
+    "is blank ?"
+    blank: Boolean
+    "equals to"
+    eq: Float
+    "Greater than"
+    gt: Float
+    "Greater than or equals"
+    gteq: Float
+    "in: Matches none of values in giver array"
+    in: [Float!]
+    "Less than"
+    lt: Float
+    "Less than or equals"
+    lteq: Float
+    "not equals to"
+    notEq: Float
+    "in: Matches none of values in giver array"
+    notIn: [Float!]
+    "is null ?"
+    null: Boolean
+}
+
+input MerchantFilter {
+    applicantId: IDFilter
+    country: StringFilter
+    createdAt: DateFilter
+    currency: StringFilter
+    description: StringFilter
+    email: StringFilter
+    feePercent: IntFilter
+    id: IDFilter
+    name: StringFilter
+    number: StringFilter
+    phone: StringFilter
+    registrationNumber: StringFilter
+    rejectedAt: DateFilter
+    startedAt: DateFilter
+    state: EnumStringFilter
+    status: EnumStringFilter
+    updatedAt: DateFilter
+    verifiedAt: DateFilter
+}
+
+input MerchantUserFilter {
+    createdAt: DateFilter
+    id: IDFilter
+    merchant: MerchantFilter
+    merchantId: IDFilter
+    role: EnumStringFilter
+    status: EnumStringFilter
+    updatedAt: DateFilter
+    user: UserFilter
+    userId: IDFilter
+}
+
+input OfferFilter {
+    amount: IntFilter
+    callbackUrl: StringFilter
+    createdAt: DateFilter
+    currency: StringFilter
+    description: StringFilter
+    externalId: StringFilter
+    feePercent: IntFilter
+    id: IDFilter
+    merchant: MerchantFilter
+    merchantId: IDFilter
+    number: StringFilter
+    rate: IntFilter
+    respondById: IDFilter
+    respondByType: StringFilter
+    status: EnumStringFilter
+    updatedAt: DateFilter
+    user: UserFilter
+    userId: IDFilter
+}
+
+input SortFilter {
+    direction: SortDirection
+    field: String!
+}
+
+input StringFilter {
+    "is blank ?"
+    blank: Boolean
+    "contains"
+    cont: String
+    "ends with"
+    end: String
+    "equals to"
+    eq: String
+    "in: Matches any values in giver array"
+    in: [String!]
+    "not equals to"
+    notEq: String
+    "in: Matches none of values in giver array"
+    notIn: [String!]
+    "is null ?"
+    notNull: Boolean
+    "is null ?"
+    null: Boolean
+    "starts with"
+    start: String
+}
+
+input TokenFilter {
+    createdAt: DateFilter
+    id: IDFilter
+    merchant: MerchantFilter
+    merchantId: IDFilter
+    publicKey: StringFilter
+    secretKey: StringFilter
+    updatedAt: DateFilter
+}
+
+input UserFilter {
+    citizenIdNumber: StringFilter
+    civilId: StringFilter
+    confirmed: BoolFilter
+    confirmedAt: DateFilter
+    createdAt: DateFilter
+    dob: DateFilter
+    email: StringFilter
+    firstName: StringFilter
+    fullName: StringFilter
+    gender: EnumStringFilter
+    id: IDFilter
+    lastName: StringFilter
+    phone: StringFilter
+    state: EnumStringFilter
+    status: EnumStringFilter
+    updatedAt: DateFilter
+    username: StringFilter
+}
+
+input WalletFilter {
+    availableAmount: IntFilter
+    balance: IntFilter
+    createdAt: DateFilter
+    freezeAmount: IntFilter
+    id: IDFilter
+    merchantName: StringFilter
+    name: StringFilter
+    ownerId: IDFilter
+    ownerType: StringFilter
+    status: EnumStringFilter
+    storeName: StringFilter
+    type: StringFilter
+    updatedAt: DateFilter
+}
+
+input WalletTransactionFilter {
+    accountNumber: StringFilter
+    amount: IntFilter
+    archived: BoolFilter
+    authorizedAt: DateFilter
+    authorizedById: IDFilter
+    balance: IntFilter
+    category: EnumStringFilter
+    createdAt: DateFilter
+    date: DateFilter
+    description: StringFilter
+    dueDate: DateFilter
+    id: IDFilter
+    merchantName: StringFilter
+    number: StringFilter
+    sourceId: IDFilter
+    sourceType: StringFilter
+    status: EnumStringFilter
+    storeName: StringFilter
+    transactionAt: DateFilter
+    typeCode: EnumStringFilter
+    updatedAt: DateFilter
+    wallet: WalletFilter
+    walletId: IDFilter
+    walletTransactionId: IDFilter
+    withdrawTransaction: WalletTransactionFilter
+}

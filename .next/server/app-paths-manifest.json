@@ -1,6 +1,6 @@
 {
-  "/page": "app/page.js",
-  "/user/bids/page": "app/user/bids/page.js",
-  "/user/notifications/page": "app/user/notifications/page.js",
-  "/user/wallet/page": "app/user/wallet/page.js"
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/auth/login/page": "app/[locale]/auth/login/page.js",
+  "/[locale]/user/wallet/page": "app/[locale]/user/wallet/page.js",
+  "/[locale]/user/bids/page": "app/[locale]/user/bids/page.js"
 }

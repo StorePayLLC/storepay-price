@@ -1,113 +1,50 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/[root-of-the-server]__33bd1d78._.css",
-      "static/chunks/node_modules_9f3cf8fc._.js",
-      "static/chunks/app_themeProvider_tsx_6790db4f._.js",
-      "static/chunks/app_layout_tsx_c0237562._.js",
-      "static/chunks/node_modules_antd_es_423747b3._.js",
-      "static/chunks/node_modules_rc-field-form_es_4fb5d7cb._.js",
-      "static/chunks/node_modules_next_997ee082._.js",
-      "static/chunks/node_modules_062b7234._.js",
-      "static/chunks/app_page_tsx_8221feda._.js",
-      "static/chunks/app_page_tsx_e5731e8d._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
-      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
-      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
-      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
-      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
-      "static/chunks/_e69f0d32._.js",
-      "static/chunks/_93808211._.js"
+    "/[locale]/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/[locale]/layout.css",
+      "static/chunks/app/[locale]/layout.js"
     ],
-    "/user/bids/page": [
-      "static/chunks/[root-of-the-server]__33bd1d78._.css",
-      "static/chunks/node_modules_9f3cf8fc._.js",
-      "static/chunks/app_themeProvider_tsx_6790db4f._.js",
-      "static/chunks/app_layout_tsx_c0237562._.js",
-      "static/chunks/node_modules_2c19decb._.js",
-      "static/chunks/app_user_layout_tsx_bd978511._.js",
-      "static/chunks/app_user_layout_tsx_e5731e8d._.js",
-      "static/chunks/node_modules_antd_es_4092d3cd._.js",
-      "static/chunks/node_modules_rc-tabs_es_eb5572a2._.js",
-      "static/chunks/node_modules_rc-menu_es_657c33d5._.js",
-      "static/chunks/node_modules_rc-field-form_es_4fb5d7cb._.js",
-      "static/chunks/node_modules_rc-select_es_b53f2576._.js",
-      "static/chunks/node_modules_rc-picker_es_d9388a88._.js",
-      "static/chunks/node_modules_23df1a19._.js",
-      "static/chunks/app_user_bids_page_client_tsx_a335e809._.js",
-      "static/chunks/app_user_bids_page_tsx_bc75aabe._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
-      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
-      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
-      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
-      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
-      "static/chunks/_e69f0d32._.js",
-      "static/chunks/_93808211._.js"
+    "/[locale]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/page.js"
     ],
-    "/user/notifications/page": [
-      "static/chunks/[root-of-the-server]__33bd1d78._.css",
-      "static/chunks/node_modules_9f3cf8fc._.js",
-      "static/chunks/app_themeProvider_tsx_6790db4f._.js",
-      "static/chunks/app_layout_tsx_c0237562._.js",
-      "static/chunks/node_modules_2c19decb._.js",
-      "static/chunks/app_user_layout_tsx_bd978511._.js",
-      "static/chunks/app_user_layout_tsx_e5731e8d._.js",
-      "static/chunks/node_modules_antd_es_modal_122a8326._.js",
-      "static/chunks/node_modules_antd_es_form_ab950170._.js",
-      "static/chunks/node_modules_antd_es_date-picker_5a8757df._.js",
-      "static/chunks/node_modules_antd_es_input_fcb5191f._.js",
-      "static/chunks/node_modules_antd_es_color-picker_0af7aa39._.js",
-      "static/chunks/node_modules_antd_es_table_b22d4ca9._.js",
-      "static/chunks/node_modules_antd_es_7799294a._.js",
-      "static/chunks/node_modules_@ant-design_icons_es_icons_042e0822._.js",
-      "static/chunks/node_modules_rc-field-form_es_1df1108d._.js",
-      "static/chunks/node_modules_rc-select_es_a627b9e8._.js",
-      "static/chunks/node_modules_rc-menu_es_dea1b9c2._.js",
-      "static/chunks/node_modules_rc-picker_es_d2aa062e._.js",
-      "static/chunks/node_modules_rc-tabs_es_eb5572a2._.js",
-      "static/chunks/node_modules_@ant-design_react-slick_es_4cfff4cf._.js",
-      "static/chunks/node_modules_rc-cascader_es_3a81b699._.js",
-      "static/chunks/node_modules_rc-tree_es_9f3aaed9._.js",
-      "static/chunks/node_modules_rc-slider_es_abdb2d93._.js",
-      "static/chunks/node_modules_rc-table_es_23647edc._.js",
-      "static/chunks/node_modules_rc-tree-select_es_a0fd8e81._.js",
-      "static/chunks/node_modules_@rc-component_3a01f452._.js",
-      "static/chunks/node_modules_1e1f79b1._.js",
-      "static/chunks/app_user_notifications_page_tsx_bc75aabe._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
-      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
-      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
-      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
-      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
-      "static/chunks/_e69f0d32._.js",
-      "static/chunks/_93808211._.js"
+    "/[locale]/auth/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/auth/layout.js"
     ],
-    "/user/wallet/page": [
-      "static/chunks/[root-of-the-server]__33bd1d78._.css",
-      "static/chunks/node_modules_9f3cf8fc._.js",
-      "static/chunks/app_themeProvider_tsx_6790db4f._.js",
-      "static/chunks/app_layout_tsx_c0237562._.js",
-      "static/chunks/node_modules_2c19decb._.js",
-      "static/chunks/app_user_layout_tsx_bd978511._.js",
-      "static/chunks/app_user_layout_tsx_e5731e8d._.js",
-      "static/chunks/node_modules_antd_es_form_3496967c._.js",
-      "static/chunks/node_modules_antd_es_input_4be7eadb._.js",
-      "static/chunks/node_modules_antd_es_modal_8b8ebc5f._.js",
-      "static/chunks/node_modules_antd_es_4c6d2df9._.js",
-      "static/chunks/node_modules_rc-tabs_es_eb5572a2._.js",
-      "static/chunks/node_modules_rc-menu_es_657c33d5._.js",
-      "static/chunks/node_modules_rc-field-form_es_1df1108d._.js",
-      "static/chunks/node_modules_rc-select_es_b53f2576._.js",
-      "static/chunks/node_modules_c256807f._.js",
-      "static/chunks/app_user_wallet_page_client_tsx_6c4b7fc8._.js",
-      "static/chunks/app_user_wallet_page_tsx_bc75aabe._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
-      "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
-      "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
-      "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
-      "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
-      "static/chunks/_e69f0d32._.js",
-      "static/chunks/_93808211._.js"
+    "/[locale]/auth/login/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/auth/login/page.js"
+    ],
+    "/[locale]/user/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/user/layout.js"
+    ],
+    "/[locale]/user/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/user/page.js"
+    ],
+    "/[locale]/user/wallet/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/user/wallet/page.js"
+    ],
+    "/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/route.js"
+    ],
+    "/[locale]/user/bids/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/user/bids/page.js"
     ]
   }
 }

@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///Users/galnarmandakh/Desktop/project/app/themeProvider.tsx"],"sourcesContent":["'use client'\nimport { ConfigProvider, theme } from 'antd'\n\nexport default function ThemeProvider({ children }: { children: React.ReactNode }) {\n  return (\n    <ConfigProvider\n      theme={{\n        algorithm: theme.darkAlgorithm,\n        token: {\n          colorPrimary: '#4B8BF4',\n          colorSuccess: '#52c41a',\n          colorWarning: '#faad14',\n          colorError: '#ff4d4f',\n          colorInfo: '#1677ff',\n          borderRadius: 8,\n        },\n      }}\n    >\n      {children}\n    </ConfigProvider>\n  )\n}"],"names":[],"mappings":";;;;AACA;AAAA;AADA;;;AAGe,SAAS,cAAc,EAAE,QAAQ,EAAiC;IAC/E,qBACE,8OAAC,sNAAA,CAAA,iBAAc;QACb,OAAO;YACL,WAAW,gLAAA,CAAA,QAAK,CAAC,aAAa;YAC9B,OAAO;gBACL,cAAc;gBACd,cAAc;gBACd,cAAc;gBACd,YAAY;gBACZ,WAAW;gBACX,cAAc;YAChB;QACF;kBAEC;;;;;;AAGP","debugId":null}}]
-}
