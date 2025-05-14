@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/galnarmandakh/Developer/storepay-price/src/app/[locale]/layout\":[\"static/media/78187650dd6b50b3-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
