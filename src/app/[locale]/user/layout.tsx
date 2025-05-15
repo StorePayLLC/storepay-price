@@ -14,6 +14,7 @@ import {
   SettingOutlined,
   LogoutOutlined,
 } from '@ant-design/icons';
+import {useAuth} from "@/utils/providers";
 
 const { Sider, Content, Header } = Layout;
 
@@ -57,6 +58,7 @@ export default function UserLayout({
 }) {
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
+  const {logout} = useAuth();
 
   return (
     <Layout className="min-h-screen">
@@ -86,13 +88,9 @@ export default function UserLayout({
                 </Link>
               ))}
             </div>
-            <Link
-              href="/auth/login"
-              className="flex items-center px-6 py-3 my-1 mx-2 rounded-lg transition-all text-red-400 hover:bg-[#1a1a1a] hover:text-red-300"
-            >
-              <span className="text-xl mr-3"><LogoutOutlined /></span>
-              {!collapsed && <span>Logout</span>}
-            </Link>
+            <Button type="text" danger icon={<LogoutOutlined />} onClick={() => logout()}>
+              Log out
+            </Button>
           </div>
         </Sider>
         <Content className="bg-[#1a1a1a] p-6">{children}</Content>

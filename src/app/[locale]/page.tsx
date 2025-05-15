@@ -1,7 +1,7 @@
 'use client';
 
 import { Layout, Button, Typography, Collapse } from 'antd';
-import Link from 'next/link';
+import Link from '@/components/link';
 import Image from 'next/image';
 
 const { Header, Content } = Layout;
@@ -119,6 +119,7 @@ export default function Home() {
                   <Image
                     src={feature.image}
                     alt={feature.title}
+                    loading="lazy"
                     fill
                     className="rounded-lg object-cover"
                   />

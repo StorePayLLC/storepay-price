@@ -44,28 +44,22 @@ export default async function RootLayout(props: RootLayoutProps) {
     messages: i18n._i18nPropsNamespace.initialMessages,
   });
   return (
-    <html lang={locale} suppressHydrationWarning>
-    <body className={`${mainFont.variable}`}>
-    <HolyLoader />
-    <ThemeProvider>
-      <TranslationProvider i18n={i18n}>
-        <ApolloWrapper>
-          <AuthProvider>
-            <AntProvider>
-              <UserProvider>{children}</UserProvider>
-            </AntProvider>
-            {/*{!!process.env.NEXT_PUBLIC_ONE_SIGNAL_APP_ID && (*/}
-            {/*  <OneSignalScript*/}
-            {/*    appId={process.env.NEXT_PUBLIC_ONE_SIGNAL_APP_ID}*/}
-            {/*    safariWebId={process.env.NEXT_PUBLIC_ONE_SIGNAL_SAF_ID!}*/}
-            {/*  />*/}
-            {/*)}*/}
-          </AuthProvider>
-        </ApolloWrapper>
-      </TranslationProvider>
-      <DevInspector />
-    </ThemeProvider>
-    </body>
+    <html lang={locale} suppressHydrationWarning={true}>
+      <body className={`${mainFont.variable}`}>
+        <HolyLoader />
+        <ThemeProvider>
+          <TranslationProvider i18n={i18n}>
+            <ApolloWrapper>
+              <AuthProvider>
+                <AntProvider>
+                  <UserProvider>{children}</UserProvider>
+                </AntProvider>
+              </AuthProvider>
+            </ApolloWrapper>
+          </TranslationProvider>
+          <DevInspector />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

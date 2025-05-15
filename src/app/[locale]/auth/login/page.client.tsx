@@ -23,7 +23,7 @@ export default function LoginClient() {
         setLoading(false);
         if (token) {
           login().catch();
-          return router.replace('/');
+          return router.replace('/user');
           // const redirectUrl = cookies.get('redirect');
           // if (!redirectUrl) return router.replace('/');
           // window.location.href = redirectUrl;

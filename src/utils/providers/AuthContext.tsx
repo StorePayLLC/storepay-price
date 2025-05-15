@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 import { useApolloClient } from '@apollo/client';
 import { i18n } from '@lingui/core';
 import { t } from '@lingui/core/macro';
-import { notification } from 'antd';
+import {App} from 'antd';
 import cookies from 'js-cookie';
 
 import { usePathname, useRouter } from '@/components/navigation';
@@ -26,9 +26,8 @@ export const AuthContext = createContext<AuthContextType>({
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
+  const {notification} = App.useApp();
   const [isAuth, setAuth] = useState(() => {
-    // SSR trick, since we are checking auth in middleware
-    if (typeof window === 'undefined') return true;
     return !!cookies.get(userTokenField);
   });
   const client = useApolloClient();
@@ -40,7 +39,9 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
     cookies.remove('cs.t');
     setAuth(false);
     await client.resetStore();
-    notification.info({ message: t`Logged out` });
+    if (notification?.info) {
+      notification.info({ message: t`Logged out` });
+    }
     toLogin();
   };
 
@@ -50,7 +51,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
   };
 
   const toLogin = () => {
-    router.push('/auth/login');
+    router.push('/');
     cookies.set('redirect', `/${i18n.locale}${pathname}`);
   };
 

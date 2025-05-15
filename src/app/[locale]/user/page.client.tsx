@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card, Form, Input, Select, Button, Avatar, Upload, Typography, Flex, Divider, Modal } from 'antd';
+import {Card, Form, Input, Select, Button, Avatar, Upload, Typography, Flex, Divider, Modal} from 'antd';
 import { UserOutlined, EditOutlined, CreditCardOutlined, WalletOutlined, LockOutlined } from '@ant-design/icons';
 
 const { Title, Text } = Typography;
@@ -153,9 +153,8 @@ const ProfilePage: React.FC = () => {
                   </Select>
                 </Form.Item>
 
-                <Form.Item 
-                  label={<span className="text-gray-300">Phone Number</span>} 
-                  className="mb-4"
+                <Form.Item
+                  label={<span className="text-gray-300">Phone Number</span>} className="mb-4"
                 >
                   <Input 
                     defaultValue="+1 (555) 123-4567" 
