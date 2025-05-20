@@ -1,24 +1,13 @@
 'use client';
 
 import { Card, Typography } from 'antd';
-import { useRouter } from 'next/navigation';
 import OTPVerification from '@/components/OTPVerification';
+import {useParams} from "next/navigation";
 
 const { Title, Text } = Typography;
 
 export default function OTPVerifyClient() {
-  const router = useRouter();
-
-  const handleSubmit = async (code: string) => {
-    // Handle OTP verification logic here
-    console.log('Verify OTP:', code);
-    router.push('/auth/new-password');
-  };
-
-  const handleResend = async () => {
-    // Handle resend logic here
-    console.log('Resend OTP');
-  };
+  const params = useParams();
 
   return (
     <Card className="w-full bg-[#111] border border-gray-800">
@@ -30,10 +19,10 @@ export default function OTPVerifyClient() {
       </Text>
 
       <OTPVerification
-        onSubmit={handleSubmit}
-        onResend={handleResend}
+        id={params.id as string}
         backLink="/auth/login"
         backText="Back to sign in"
+        href={`/auth/new-password/${params.id}`}
       />
     </Card>
   );

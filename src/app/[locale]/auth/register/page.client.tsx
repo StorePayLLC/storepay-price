@@ -1,21 +1,18 @@
 'use client';
 
-import { useState } from 'react';
-import { Card, Form, Input, Button, Typography, Divider } from 'antd';
-import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
+import {Card, Form, Input, Button, Typography, Divider, App} from 'antd';
+import { MailOutlined } from '@ant-design/icons';
 import Link from '@/components/link';
+import {useUserRegisterMutation} from "@/gql/mutation/user/register.generated";
+import {useRouter} from "@/components/navigation";
 
 const { Title, Text } = Typography;
 
 export default function RegisterClient() {
-  const [loading, setLoading] = useState(false);
-
-  const onFinish = async (values: any) => {
-    setLoading(true);
-    // Handle registration logic here
-    console.log('Register:', values);
-    setLoading(false);
-  };
+  const [register, {loading}]= useUserRegisterMutation();
+  const {notification} = App.useApp();
+  const [form] = Form.useForm();
+  const router = useRouter();
 
   return (
     <Card className="w-full bg-[#111] border border-gray-800">
@@ -24,23 +21,17 @@ export default function RegisterClient() {
       </Title>
 
       <Form
+        form={form}
         name="register"
-        onFinish={onFinish}
+        onFinish={(values) => {
+          register({variables: { input: {...values}}}).then((res) => {
+            notification.success({message: "Registration successful", description: "Your account has been created successfully."});
+            router.push(`/auth/otp-verify/${res.data?.userRegister}`)
+          })
+        }}
         layout="vertical"
         requiredMark={false}
       >
-        <Form.Item
-          name="name"
-          label={<span className="text-gray-400">Full name</span>}
-          rules={[{ required: true, message: 'Please enter your name' }]}
-        >
-          <Input
-            size="large"
-            prefix={<UserOutlined className="text-gray-400" />}
-            className="bg-[#1a1a1a] border-gray-700 text-white"
-            placeholder="Enter your name"
-          />
-        </Form.Item>
 
         <Form.Item
           name="email"
@@ -55,22 +46,6 @@ export default function RegisterClient() {
             prefix={<MailOutlined className="text-gray-400" />}
             className="bg-[#1a1a1a] border-gray-700 text-white"
             placeholder="Enter your email"
-          />
-        </Form.Item>
-
-        <Form.Item
-          name="password"
-          label={<span className="text-gray-400">Password</span>}
-          rules={[
-            { required: true, message: 'Please enter your password' },
-            { min: 8, message: 'Password must be at least 8 characters' },
-          ]}
-        >
-          <Input.Password
-            size="large"
-            prefix={<LockOutlined className="text-gray-400" />}
-            className="bg-[#1a1a1a] border-gray-700 text-white"
-            placeholder="Create a password"
           />
         </Form.Item>
 

@@ -1,0 +1,3 @@
+mutation ResendConfirmable($input: confirmableResendInput!) {
+    confirmableResend(input: $input)
+}

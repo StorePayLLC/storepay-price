@@ -70,6 +70,22 @@ export type WalletInterfaceTransactionsArgs = {
 
 export type TransactionSourceUnion = Offer | User;
 
+export type ConfirmableToken = BaseModelInterface &
+  Node & {
+    __typename?: "ConfirmableToken";
+    appScreen?: Maybe<Scalars["String"]["output"]>;
+    attempts: Scalars["Int"]["output"];
+    confirmable?: Maybe<Node>;
+    confirmedAt?: Maybe<Scalars["ISO8601DateTime"]["output"]>;
+    createdAt: Scalars["ISO8601DateTime"]["output"];
+    expireAt?: Maybe<Scalars["ISO8601DateTime"]["output"]>;
+    expired: Scalars["Boolean"]["output"];
+    generatedAt?: Maybe<Scalars["ISO8601DateTime"]["output"]>;
+    id: Scalars["ID"]["output"];
+    key: Scalars["String"]["output"];
+    updatedAt: Scalars["ISO8601DateTime"]["output"];
+  };
+
 export type Kyc = BaseModelInterface &
   Node & {
     __typename?: "Kyc";
@@ -232,11 +248,22 @@ export type MetricResponse = {
 
 export type Mutation = {
   __typename?: "Mutation";
+  confirmableConfirm?: Maybe<Scalars["ID"]["output"]>;
+  confirmableResend?: Maybe<Scalars["ID"]["output"]>;
   faceCheck?: Maybe<Kyc>;
   kycCreate?: Maybe<Kyc>;
   kycGenerateSessionId?: Maybe<Scalars["String"]["output"]>;
-  userRegister?: Maybe<User>;
+  userPasswordCreate?: Maybe<Scalars["ID"]["output"]>;
+  userRegister: Scalars["ID"]["output"];
   userVerify?: Maybe<User>;
+};
+
+export type MutationConfirmableConfirmArgs = {
+  input: ConfirmableConfirmInput;
+};
+
+export type MutationConfirmableResendArgs = {
+  input: ConfirmableResendInput;
 };
 
 export type MutationFaceCheckArgs = {
@@ -249,6 +276,10 @@ export type MutationKycCreateArgs = {
 
 export type MutationKycGenerateSessionIdArgs = {
   input: KycGenerateSessionIdInput;
+};
+
+export type MutationUserPasswordCreateArgs = {
+  input: UserPasswordCreateInput;
 };
 
 export type MutationUserRegisterArgs = {
@@ -519,10 +550,12 @@ export type User = BaseModelInterface &
     createdAt: Scalars["ISO8601DateTime"]["output"];
     dob?: Maybe<Scalars["ISO8601Date"]["output"]>;
     email?: Maybe<Scalars["String"]["output"]>;
+    emailConfirmable?: Maybe<ConfirmableToken>;
     externalKycId?: Maybe<Scalars["String"]["output"]>;
     firstName?: Maybe<Scalars["String"]["output"]>;
     gender?: Maybe<Gender | `${Gender}`>;
     id: Scalars["ID"]["output"];
+    kyc?: Maybe<Kyc>;
     kycs?: Maybe<KycConnection>;
     language?: Maybe<Scalars["String"]["output"]>;
     merchantUsers: MerchantUserConnection;
@@ -980,6 +1013,17 @@ export type WalletTransactionFilter = {
   withdrawTransaction?: InputMaybe<WalletTransactionFilter>;
 };
 
+export type ConfirmableConfirmInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+  id: Scalars["ID"]["input"];
+  token: Scalars["String"]["input"];
+};
+
+export type ConfirmableResendInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+  id: Scalars["ID"]["input"];
+};
+
 export type FaceCheckInput = {
   clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
   id: Scalars["ID"]["input"];
@@ -995,19 +1039,26 @@ export type KycGenerateSessionIdInput = {
   clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
 };
 
+export type UserPasswordCreateInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+  confirmPassword: Scalars["String"]["input"];
+  password: Scalars["String"]["input"];
+  userSid: Scalars["ID"]["input"];
+};
+
 export type UserRegisterInput = {
   clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
-  dob?: InputMaybe<Scalars["ISO8601Date"]["input"]>;
   email: Scalars["String"]["input"];
-  firstName?: InputMaybe<Scalars["String"]["input"]>;
-  password: Scalars["String"]["input"];
 };
 
 export type UserVerifyInput = {
   citizenIdNumber: Scalars["String"]["input"];
+  civilId: Scalars["String"]["input"];
   clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
   dob: Scalars["ISO8601Date"]["input"];
   firstName: Scalars["String"]["input"];
   id: Scalars["ID"]["input"];
+  language: Scalars["String"]["input"];
   lastName: Scalars["String"]["input"];
+  nationality: Scalars["String"]["input"];
 };

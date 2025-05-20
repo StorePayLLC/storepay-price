@@ -1,21 +1,18 @@
 'use client';
 
-import { useState } from 'react';
 import { Card, Form, Input, Button, Typography } from 'antd';
 import { LockOutlined } from '@ant-design/icons';
 import Link from '@/components/link';
+import {useUserCreatePasswordMutation} from "@/gql/mutation/user/createPassword.generated";
+import {useRouter} from "@/components/navigation";
+import {useParams} from "next/navigation";
 
 const { Title, Text } = Typography;
 
 export default function NewPasswordClient() {
-  const [loading, setLoading] = useState(false);
-
-  const onFinish = async (values: any) => {
-    setLoading(true);
-    // Handle new password logic here
-    console.log('New password:', values);
-    setLoading(false);
-  };
+  const [create, {loading}] = useUserCreatePasswordMutation();
+  const router = useRouter();
+  const params = useParams();
 
   return (
     <Card className="w-full bg-[#111] border border-gray-800">
@@ -28,7 +25,11 @@ export default function NewPasswordClient() {
 
       <Form
         name="newPassword"
-        onFinish={onFinish}
+        onFinish={(values) => {
+          create({variables: {input: {userSid: params.id, ...values}}}).then(() => {
+            router.push('/auth/login');
+          })
+        }}
         layout="vertical"
         requiredMark={false}
       >
@@ -80,7 +81,7 @@ export default function NewPasswordClient() {
             className="w-full bg-blue-600"
             loading={loading}
           >
-            Reset password
+            Create password
           </Button>
         </Form.Item>
 

@@ -1,0 +1,9 @@
+query ConfirmableTokenById($id: ID!) {
+    node(id: $id) {
+        ...on ConfirmableToken {
+            id
+            expireAt
+            expired
+        }
+    }
+}

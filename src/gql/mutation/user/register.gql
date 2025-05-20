@@ -1,8 +1,3 @@
 mutation UserRegister($input: userRegisterInput!) {
-    userRegister(input: $input) {
-        id
-        email
-        firstName
-        dob
-    }
+    userRegister(input: $input)
 }

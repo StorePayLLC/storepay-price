@@ -6,6 +6,7 @@ import {useUserVerifyMutation} from "@/gql/mutation/user/verify.generated";
 import {useRouter} from "@/components/navigation";
 import {useGetUserKycsQuery} from "@/gql/mutation/user/kyc/userKycs.generated";
 import {useParams} from "next/navigation";
+import {languages} from "@/config/internalization";
 
 const { Text } = Typography;
 
@@ -32,17 +33,17 @@ export default function UserForm() {
       <Form
         form={form}
         layout="vertical"
-        initialValues={{}}
+        initialValues={{kyc}}
         onFinish={(values) => {
           verify({variables: {input: {id: user!.id, ...values}}}).then(() => {
             notification.success({message: "Verification successful", description: "Your information has been verified successfully."});
-            router.push('/user/profile');
+            router.push('/user');
           })
         }}
       >
         <Form.Item
           initialValue={kyc?.preferences?.document_number}
-          name="citizen_id_number"
+          name="citizenIdNumber"
           label={<span className="text-gray-300">Citizen ID Number</span>}
           rules={[{ required: true, message: 'Please enter your citizen ID number' }]}
         >
@@ -55,7 +56,7 @@ export default function UserForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Form.Item
             initialValue={kyc?.preferences?.first_name}
-            name="firstname"
+            name="firstName"
             label={<span className="text-gray-300">First Name</span>}
             rules={[{ required: true, message: 'Please enter your first name' }]}
           >
@@ -66,7 +67,7 @@ export default function UserForm() {
           </Form.Item>
 
           <Form.Item
-            name="lastname"
+            name="lastName"
             initialValue={kyc?.preferences?.last_name}
             label={<span className="text-gray-300">Last Name</span>}
             rules={[{ required: true, message: 'Please enter your last name' }]}
@@ -79,7 +80,8 @@ export default function UserForm() {
         </div>
 
         <Form.Item
-          name="date_of_birth"
+          initialValue={kyc?.preferences?.dob}
+          name="dob"
           label={<span className="text-gray-300">Date of Birth</span>}
           rules={[{ required: true, message: 'Please select your date of birth' }]}
         >
@@ -90,6 +92,7 @@ export default function UserForm() {
         </Form.Item>
 
         <Form.Item
+          initialValue={kyc?.preferences?.nationality}
           name="nationality"
           label={<span className="text-gray-300">Nationality</span>}
           rules={[{ required: true, message: 'Please select your nationality' }]}
@@ -108,25 +111,21 @@ export default function UserForm() {
         </Form.Item>
 
         <Form.Item
-          name="preferred_language"
+          name="language"
           label={<span className="text-gray-300">Preferred Language</span>}
           rules={[{ required: true, message: 'Please select your preferred language' }]}
         >
           <Select
             className="w-full bg-[#1a1a1a]"
             placeholder="Select language"
-            options={[
-              { value: 'en', label: 'English' },
-              { value: 'es', label: 'Spanish' },
-              { value: 'fr', label: 'French' },
-              { value: 'de', label: 'German' },
-              // Add more languages as needed
-            ]}
+            options={Object.values(languages).map((item, index) => {
+              return {value: Object.keys(languages)[index], label: `${item.flag} ${item.name}`};
+            })}
           />
         </Form.Item>
 
         <Form.Item
-          name="civil_id"
+          name="civilId"
           label={<span className="text-gray-300">Civil ID</span>}
           rules={[{ required: true, message: 'Please enter your civil ID' }]}
         >

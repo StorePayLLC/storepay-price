@@ -1,7 +1,7 @@
 // /** @type {import('@lingui/conf').LinguiConfig} */
 import { LinguiConfig } from '@lingui/conf';
 
-import { availableLocales } from './src/config/internalization';
+import { availableLocales } from '@/config/internalization';
 
 const config: LinguiConfig = {
   locales: availableLocales as unknown as string[],

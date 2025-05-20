@@ -1,0 +1,3 @@
+mutation ConfirmableVerify($input: confirmableConfirmInput!) {
+    confirmableConfirm(input: $input)
+}

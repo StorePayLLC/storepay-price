@@ -9,23 +9,12 @@ export type UserRegisterMutationVariables = Types.Exact<{
 
 export type UserRegisterMutation = {
   __typename?: "Mutation";
-  userRegister?: {
-    __typename?: "User";
-    id: string;
-    email?: string;
-    firstName?: string;
-    dob?: any;
-  };
+  userRegister: string;
 };
 
 export const UserRegisterDocument = gql`
   mutation UserRegister($input: userRegisterInput!) {
-    userRegister(input: $input) {
-      id
-      email
-      firstName
-      dob
-    }
+    userRegister(input: $input)
   }
 `;
 export type UserRegisterMutationFn = Apollo.MutationFunction<
