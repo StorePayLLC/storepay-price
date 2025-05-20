@@ -28,6 +28,7 @@ export type Scalars = {
   ISO8601Date: { input: any; output: any };
   ISO8601DateTime: { input: any; output: any };
   JSON: { input: any; output: any };
+  Upload: { input: any; output: any };
 };
 
 export type BaseModelInterface = {
@@ -68,6 +69,46 @@ export type WalletInterfaceTransactionsArgs = {
 };
 
 export type TransactionSourceUnion = Offer | User;
+
+export type Kyc = BaseModelInterface &
+  Node & {
+    __typename?: "Kyc";
+    confirmedAt?: Maybe<Scalars["ISO8601DateTime"]["output"]>;
+    createdAt: Scalars["ISO8601DateTime"]["output"];
+    expiresAt?: Maybe<Scalars["ISO8601DateTime"]["output"]>;
+    id: Scalars["ID"]["output"];
+    preferences?: Maybe<Scalars["JSON"]["output"]>;
+    status?: Maybe<KycStatus | `${KycStatus}`>;
+    updatedAt: Scalars["ISO8601DateTime"]["output"];
+    user?: Maybe<User>;
+    userId?: Maybe<Scalars["ID"]["output"]>;
+  };
+
+export type KycConnection = {
+  __typename?: "KycConnection";
+  edges: Array<KycEdge>;
+  metrics: Array<MetricResponse>;
+  nodes: Array<Kyc>;
+  pageInfo: PageInfo;
+  sum: Scalars["Float"]["output"];
+  totalCount: Scalars["Int"]["output"];
+};
+
+export type KycConnectionMetricsArgs = {
+  dateField: Scalars["String"]["input"];
+  granularity: MetricGranularity;
+  sumField?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type KycConnectionSumArgs = {
+  field: Scalars["String"]["input"];
+};
+
+export type KycEdge = {
+  __typename?: "KycEdge";
+  cursor: Scalars["String"]["output"];
+  node: Kyc;
+};
 
 export type Merchant = BaseModelInterface &
   Node & {
@@ -187,6 +228,35 @@ export type MetricResponse = {
   __typename?: "MetricResponse";
   label: Scalars["String"]["output"];
   value: Scalars["Float"]["output"];
+};
+
+export type Mutation = {
+  __typename?: "Mutation";
+  faceCheck?: Maybe<Kyc>;
+  kycCreate?: Maybe<Kyc>;
+  kycGenerateSessionId?: Maybe<Scalars["String"]["output"]>;
+  userRegister?: Maybe<User>;
+  userVerify?: Maybe<User>;
+};
+
+export type MutationFaceCheckArgs = {
+  input: FaceCheckInput;
+};
+
+export type MutationKycCreateArgs = {
+  input: KycCreateInput;
+};
+
+export type MutationKycGenerateSessionIdArgs = {
+  input: KycGenerateSessionIdInput;
+};
+
+export type MutationUserRegisterArgs = {
+  input: UserRegisterInput;
+};
+
+export type MutationUserVerifyArgs = {
+  input: UserVerifyInput;
 };
 
 export type Offer = BaseModelInterface &
@@ -453,6 +523,7 @@ export type User = BaseModelInterface &
     firstName?: Maybe<Scalars["String"]["output"]>;
     gender?: Maybe<Gender | `${Gender}`>;
     id: Scalars["ID"]["output"];
+    kycs?: Maybe<KycConnection>;
     language?: Maybe<Scalars["String"]["output"]>;
     merchantUsers: MerchantUserConnection;
     offers?: Maybe<Array<Offer>>;
@@ -463,6 +534,16 @@ export type User = BaseModelInterface &
     updatedAt: Scalars["ISO8601DateTime"]["output"];
     username?: Maybe<Scalars["String"]["output"]>;
   };
+
+export type UserKycsArgs = {
+  after?: InputMaybe<Scalars["String"]["input"]>;
+  before?: InputMaybe<Scalars["String"]["input"]>;
+  filter?: InputMaybe<KycFilter>;
+  first?: InputMaybe<Scalars["Int"]["input"]>;
+  last?: InputMaybe<Scalars["Int"]["input"]>;
+  offset?: InputMaybe<Scalars["Int"]["input"]>;
+  sort?: InputMaybe<SortFilter>;
+};
 
 export type UserMerchantUsersArgs = {
   after?: InputMaybe<Scalars["String"]["input"]>;
@@ -602,6 +683,12 @@ export enum KycState {
   Verified = "VERIFIED",
 }
 
+export enum KycStatus {
+  Confirmed = "confirmed",
+  Rejected = "rejected",
+  Started = "started",
+}
+
 export enum MerchantStatus {
   Active = "active",
   Inactive = "inactive",
@@ -734,6 +821,17 @@ export type IntFilter = {
   notEq?: InputMaybe<Scalars["Float"]["input"]>;
   notIn?: InputMaybe<Array<Scalars["Float"]["input"]>>;
   null?: InputMaybe<Scalars["Boolean"]["input"]>;
+};
+
+export type KycFilter = {
+  confirmedAt?: InputMaybe<DateFilter>;
+  createdAt?: InputMaybe<DateFilter>;
+  expiresAt?: InputMaybe<DateFilter>;
+  id?: InputMaybe<IdFilter>;
+  status?: InputMaybe<EnumStringFilter>;
+  updatedAt?: InputMaybe<DateFilter>;
+  user?: InputMaybe<UserFilter>;
+  userId?: InputMaybe<IdFilter>;
 };
 
 export type MerchantFilter = {
@@ -880,4 +978,36 @@ export type WalletTransactionFilter = {
   walletId?: InputMaybe<IdFilter>;
   walletTransactionId?: InputMaybe<IdFilter>;
   withdrawTransaction?: InputMaybe<WalletTransactionFilter>;
+};
+
+export type FaceCheckInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+  id: Scalars["ID"]["input"];
+  sessionId: Scalars["String"]["input"];
+};
+
+export type KycCreateInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+  passport: Scalars["Upload"]["input"];
+};
+
+export type KycGenerateSessionIdInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type UserRegisterInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+  dob?: InputMaybe<Scalars["ISO8601Date"]["input"]>;
+  email: Scalars["String"]["input"];
+  firstName?: InputMaybe<Scalars["String"]["input"]>;
+  password: Scalars["String"]["input"];
+};
+
+export type UserVerifyInput = {
+  citizenIdNumber: Scalars["String"]["input"];
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+  dob: Scalars["ISO8601Date"]["input"];
+  firstName: Scalars["String"]["input"];
+  id: Scalars["ID"]["input"];
+  lastName: Scalars["String"]["input"];
 };

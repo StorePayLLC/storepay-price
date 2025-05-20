@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
-import Link from 'next/link';
+import Link from '@/components/link';
 import { usePathname } from 'next/navigation';
 
 import LogoWhite from '@/assets/images/global/logo-white.svg';
@@ -25,7 +25,7 @@ const Header = ({ menus, locale }: { menus: MenuItem[]; locale: string }) => {
       className={`backdrop-saturate-180 backdrop-blur-5 fixed top-0 z-50 block w-full border-b-[1px] backdrop-blur-sm ${isSpcPage ? 'border-[#fff]/20 bg-[#000]/50 text-white' : 'border-b-gray bg-white/90 text-black-2'} px-2 py-4 shadow-md md:hidden`}
     >
       <div className="container mx-auto flex items-center justify-between md:px-4">
-        <Link href={`/${locale}/global/home`}>{isSpcPage ? <LogoWhite /> : <LogoBlack />}</Link>
+        <Link href={`/`}>{isSpcPage ? <LogoWhite /> : <LogoBlack />}</Link>
         <div className="flex items-center space-x-4">
           {isStorepayId() ? <LocaleBtn isSpcPage={isSpcPage} /> : <IntBtn isSpcPage={isSpcPage} />}
           {isStorepayId() || (

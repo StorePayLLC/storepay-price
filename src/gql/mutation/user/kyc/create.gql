@@ -1,0 +1,11 @@
+mutation KycCreate($input: kycCreateInput!) {
+    kycCreate(input: $input) {
+        id
+        preferences
+        userId
+        status
+        createdAt
+        confirmedAt
+        expiresAt
+    }
+}

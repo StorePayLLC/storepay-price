@@ -25,7 +25,7 @@ msgstr ""
 msgid "Accept only number"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:185
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:185
 #: src/app/[locale]/backoffice/merchants/index.tsx:166
 #: src/app/[locale]/backoffice/stores/index.tsx:141
 msgid "Actions"
@@ -47,10 +47,10 @@ msgstr ""
 #: src/app/[locale]/backoffice/stores/index.tsx:35
 #: src/app/[locale]/backoffice/system/categories/form.tsx:49
 #: src/app/[locale]/backoffice/system/loan-products/index.tsx:205
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:98
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:48
-#: src/app/[locale]/merchant-web/users/page.client.tsx:19
-#: src/app/[locale]/merchant-web/users/page.client.tsx:21
+#: src/app/[locale]/merchant-web/reports/layout.tsx:98
+#: src/app/[locale]/merchant-web/sales/layout.tsx:48
+#: src/app/[locale]/merchant-web/users/layout.tsx:19
+#: src/app/[locale]/merchant-web/users/layout.tsx:21
 #: src/components/data/merchantUserWithStoreForm.tsx:124
 #: src/components/form/fields/MerchantAndStoreSharedFields.tsx:60
 msgid "Active"
@@ -61,8 +61,8 @@ msgstr ""
 msgid "Active purchase limit"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:177
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:231
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:177
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:231
 msgid "Add {0}"
 msgstr ""
 
@@ -151,11 +151,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: src/app/[locale]/merchant-web/page.client.tsx:102
+#: src/app/[locale]/merchant-web/layout.tsx:102
 msgid "All loans"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:119
+#: src/app/[locale]/auth/signup/layout.tsx:119
 msgid "Already have an account?"
 msgstr ""
 
@@ -163,8 +163,8 @@ msgstr ""
 #: src/app/[locale]/backoffice/gamification/[id]/edit/Actions/ChangeCreditScore.tsx:21
 #: src/app/[locale]/backoffice/gamification/[id]/edit/Goals/LoanProduct.tsx:33
 #: src/app/[locale]/backoffice/gamification/[id]/edit/Goals/Merchant.tsx:40
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:161
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:158
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:161
+#: src/app/[locale]/merchant-web/requests/layout.tsx:158
 #: src/app/[locale]/merchant-web/sales/components/modal.tsx:120
 msgid "Amount"
 msgstr ""
@@ -187,11 +187,11 @@ msgstr ""
 msgid "API Key"
 msgstr ""
 
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:33
+#: src/app/[locale]/merchant-web/requests/layout.tsx:33
 msgid "Approved"
 msgstr ""
 
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:194
+#: src/app/[locale]/merchant-web/requests/layout.tsx:194
 msgid "Approved at"
 msgstr ""
 
@@ -217,11 +217,11 @@ msgstr ""
 msgid "Article"
 msgstr ""
 
-#: src/app/[locale]/backoffice/article-category/page.client.tsx:11
+#: src/app/[locale]/backoffice/article-category/layout.tsx:11
 msgid "Article categories"
 msgstr ""
 
-#: src/app/[locale]/backoffice/article-category/page.client.tsx:11
+#: src/app/[locale]/backoffice/article-category/layout.tsx:11
 msgid "Article category list page"
 msgstr ""
 
@@ -238,15 +238,15 @@ msgid "Available loan products"
 msgstr ""
 
 #: src/app/[locale]/backoffice/loans/index.tsx:336
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:241
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:283
+#: src/app/[locale]/merchant-web/reports/layout.tsx:241
+#: src/app/[locale]/merchant-web/sales/layout.tsx:283
 msgid "Balance"
 msgstr ""
 
 #: src/app/[locale]/backoffice/bank-accounts/index.tsx:69
-#: src/app/[locale]/backoffice/bank-accounts/page.client.tsx:11
-#: src/app/[locale]/backoffice/clients/detail/[id]/page.client.tsx:67
-#: src/app/[locale]/backoffice/merchants/detail/[id]/page.client.tsx:46
+#: src/app/[locale]/backoffice/bank-accounts/layout.tsx:11
+#: src/app/[locale]/backoffice/clients/detail/[id]/layout.tsx:67
+#: src/app/[locale]/backoffice/merchants/detail/[id]/layout.tsx:46
 #: src/components/template/Sidebar/index.tsx:213
 msgid "Bank accounts"
 msgstr ""
@@ -261,7 +261,7 @@ msgid "bank name"
 msgstr ""
 
 #: src/app/[locale]/backoffice/bank/index.tsx:44
-#: src/app/[locale]/backoffice/bank/page.client.tsx:11
+#: src/app/[locale]/backoffice/bank/layout.tsx:11
 msgid "Banks"
 msgstr ""
 
@@ -279,7 +279,7 @@ msgstr ""
 msgid "Banner deleted"
 msgstr ""
 
-#: src/app/[locale]/backoffice/banner/edit/[id]/page.client.tsx:11
+#: src/app/[locale]/backoffice/banner/edit/[id]/layout.tsx:11
 msgid "Banner edit"
 msgstr ""
 
@@ -287,7 +287,7 @@ msgstr ""
 msgid "Banner info"
 msgstr ""
 
-#: src/app/[locale]/backoffice/banner/page.client.tsx:11
+#: src/app/[locale]/backoffice/banner/layout.tsx:11
 msgid "Banner list page"
 msgstr ""
 
@@ -296,7 +296,7 @@ msgid "Banner updated"
 msgstr ""
 
 #: src/app/[locale]/backoffice/banner/index.tsx:43
-#: src/app/[locale]/backoffice/banner/page.client.tsx:11
+#: src/app/[locale]/backoffice/banner/layout.tsx:11
 msgid "Banners"
 msgstr ""
 
@@ -317,14 +317,14 @@ msgstr ""
 msgid "Call back url"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:108
-#: src/app/[locale]/auth/password-reset/page.client.tsx:40
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:108
+#: src/app/[locale]/auth/password-reset/layout.tsx:40
 #: src/app/[locale]/backoffice/bank/index.tsx:35
 #: src/app/[locale]/backoffice/documentation/index.tsx:44
 #: src/app/[locale]/backoffice/faq/index.tsx:48
 #: src/app/[locale]/backoffice/stores/form.tsx:62
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:44
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:66
+#: src/app/[locale]/merchant-web/requests/layout.tsx:44
+#: src/app/[locale]/merchant-web/requests/layout.tsx:66
 #: src/app/[locale]/profile/components/addEmailOrPhoneModal.tsx:32
 #: src/app/[locale]/profile/components/infoWithAvatar.tsx:47
 #: src/components/data/merchantUserWithStoreForm.tsx:58
@@ -340,25 +340,25 @@ msgstr ""
 #: src/app/[locale]/backoffice/clients/detail/[id]/userLoans.tsx:49
 #: src/app/[locale]/backoffice/invoices/index.tsx:31
 #: src/app/[locale]/backoffice/loans/components/schedule.tsx:63
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:35
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:35
 msgid "Cancelled"
 msgstr ""
 
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:236
+#: src/app/[locale]/merchant-web/reports/layout.tsx:236
 msgid "Cash amount"
 msgstr ""
 
 #: src/app/[locale]/backoffice/article-category/index.tsx:21
 #: src/app/[locale]/backoffice/loyalty-category/index.tsx:49
 #: src/app/[locale]/backoffice/system/categories/index.tsx:39
-#: src/app/[locale]/backoffice/system/categories/page.client.tsx:11
+#: src/app/[locale]/backoffice/system/categories/layout.tsx:11
 #: src/components/template/Sidebar/index.tsx:231
 msgid "Categories"
 msgstr ""
 
 #: src/app/[locale]/backoffice/system/user-permission/components/permission.tsx:112
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:252
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:289
+#: src/app/[locale]/merchant-web/reports/layout.tsx:252
+#: src/app/[locale]/merchant-web/sales/layout.tsx:289
 msgid "Category"
 msgstr ""
 
@@ -367,8 +367,8 @@ msgstr ""
 msgid "Category form"
 msgstr ""
 
-#: src/app/[locale]/backoffice/loyalty-category/page.client.tsx:11
-#: src/app/[locale]/backoffice/system/categories/page.client.tsx:11
+#: src/app/[locale]/backoffice/loyalty-category/layout.tsx:11
+#: src/app/[locale]/backoffice/system/categories/layout.tsx:11
 msgid "Category list page"
 msgstr ""
 
@@ -377,13 +377,13 @@ msgstr ""
 msgid "Category name"
 msgstr ""
 
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:46
+#: src/app/[locale]/merchant-web/requests/layout.tsx:46
 msgid "Change"
 msgstr ""
 
 #: src/app/[locale]/backoffice/invoices/index.tsx:51
 #: src/app/[locale]/backoffice/request/index.tsx:49
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:72
+#: src/app/[locale]/merchant-web/requests/layout.tsx:72
 msgid "Change amount"
 msgstr ""
 
@@ -393,13 +393,13 @@ msgstr ""
 
 #: src/app/[locale]/backoffice/invoices/index.tsx:57
 #: src/app/[locale]/backoffice/request/index.tsx:55
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:63
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:63
 msgid "Change cash amount"
 msgstr ""
 
 #: src/app/[locale]/backoffice/invoices/index.tsx:69
 #: src/app/[locale]/backoffice/request/index.tsx:67
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:75
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:75
 msgid "Change credit rating"
 msgstr ""
 
@@ -423,13 +423,13 @@ msgstr ""
 #: src/app/[locale]/backoffice/invoices/components/changeAmount.tsx:14
 #: src/app/[locale]/backoffice/loans/components/changeAmount.tsx:14
 #: src/app/[locale]/backoffice/request/components/changeAmount.tsx:14
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:57
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:57
 msgid "Change loan amount"
 msgstr ""
 
 #: src/app/[locale]/profile/components/navMenu.tsx:18
 #: src/app/[locale]/profile/password/index.tsx:18
-#: src/app/[locale]/profile/password/page.client.tsx:11
+#: src/app/[locale]/profile/password/layout.tsx:11
 msgid "Change password"
 msgstr ""
 
@@ -503,7 +503,7 @@ msgid "Clear"
 msgstr ""
 
 #: src/app/[locale]/merchant-web/reports/components/modal.tsx:32
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:278
+#: src/app/[locale]/merchant-web/reports/layout.tsx:278
 #: src/app/[locale]/merchant-web/requests/components/modal.tsx:47
 #: src/app/[locale]/merchant-web/sales/components/modal.tsx:101
 msgid "Close"
@@ -512,8 +512,8 @@ msgstr ""
 #: src/app/[locale]/backoffice/clients/detail/[id]/userLoans.tsx:28
 #: src/app/[locale]/backoffice/loans/index.tsx:48
 #: src/app/[locale]/backoffice/request/index.tsx:25
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:100
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:50
+#: src/app/[locale]/merchant-web/reports/layout.tsx:100
+#: src/app/[locale]/merchant-web/sales/layout.tsx:50
 msgid "Closed"
 msgstr ""
 
@@ -521,24 +521,24 @@ msgstr ""
 msgid "Company"
 msgstr ""
 
-#: src/app/[locale]/auth/password-reset/page.client.tsx:32
+#: src/app/[locale]/auth/password-reset/layout.tsx:32
 msgid "Confimation number"
 msgstr ""
 
-#: src/app/[locale]/auth/password-reset/page.client.tsx:37
+#: src/app/[locale]/auth/password-reset/layout.tsx:37
 msgid "Confirm"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:79
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:79
 #: src/app/[locale]/profile/password/index.tsx:52
 msgid "Confirm password"
 msgstr ""
 
-#: src/app/[locale]/confirm/[token]/page.client.tsx:11
+#: src/app/[locale]/confirm/[token]/layout.tsx:11
 msgid "Confirmation"
 msgstr ""
 
-#: src/app/[locale]/auth/password-reset/page.client.tsx:26
+#: src/app/[locale]/auth/password-reset/layout.tsx:26
 msgid "Confirmation successful"
 msgstr ""
 
@@ -578,12 +578,12 @@ msgid "Contract type"
 msgstr ""
 
 #: src/app/[locale]/backoffice/contracts/index.tsx:54
-#: src/app/[locale]/backoffice/contracts/page.client.tsx:11
+#: src/app/[locale]/backoffice/contracts/layout.tsx:11
 #: src/components/template/Sidebar/index.tsx:302
 msgid "Contracts"
 msgstr ""
 
-#: src/app/[locale]/backoffice/contracts/page.client.tsx:11
+#: src/app/[locale]/backoffice/contracts/layout.tsx:11
 msgid "Contracts page"
 msgstr ""
 
@@ -619,7 +619,7 @@ msgstr ""
 #: src/app/[locale]/merchant-web/requests/components/modal.tsx:46
 #: src/app/[locale]/merchant-web/sales/components/modal.tsx:83
 #: src/app/[locale]/merchant-web/sales/components/modal.tsx:99
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:199
+#: src/app/[locale]/merchant-web/sales/layout.tsx:199
 msgid "Create invoice"
 msgstr ""
 
@@ -627,7 +627,7 @@ msgstr ""
 msgid "Create invoice by phone number"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/page.client.tsx:101
+#: src/app/[locale]/backoffice/gamification/layout.tsx:101
 msgid "Create new {0}"
 msgstr ""
 
@@ -639,15 +639,15 @@ msgstr ""
 msgid "Create new gamification"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:36
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:37
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:36
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:37
 msgid "Create password"
 msgstr ""
 
 #: src/app/[locale]/backoffice/invoices/index.tsx:151
 #: src/app/[locale]/backoffice/request/index.tsx:125
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:173
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:186
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:173
+#: src/app/[locale]/merchant-web/requests/layout.tsx:186
 msgid "Created at"
 msgstr ""
 
@@ -683,7 +683,7 @@ msgstr ""
 msgid "Credit score limit"
 msgstr ""
 
-#: src/app/[locale]/backoffice/system/credit-score-products/page.client.tsx:11
+#: src/app/[locale]/backoffice/system/credit-score-products/layout.tsx:11
 msgid "Credit score product"
 msgstr ""
 
@@ -695,7 +695,7 @@ msgstr ""
 msgid "Credit score rights"
 msgstr ""
 
-#: src/app/[locale]/backoffice/clients/detail/[id]/page.client.tsx:77
+#: src/app/[locale]/backoffice/clients/detail/[id]/layout.tsx:77
 msgid "Credit score transactions history"
 msgstr ""
 
@@ -737,8 +737,8 @@ msgstr ""
 msgid "Dark"
 msgstr ""
 
-#: src/app/[locale]/backoffice/page.client.tsx:11
-#: src/app/[locale]/merchant-web/page.client.tsx:70
+#: src/app/[locale]/backoffice/layout.tsx:11
+#: src/app/[locale]/merchant-web/layout.tsx:70
 #: src/components/template/MerchantSidebar/index.tsx:28
 msgid "Dashboard"
 msgstr "Bảng điều khiển"
@@ -755,7 +755,7 @@ msgid "Debit"
 msgstr ""
 
 #: src/app/[locale]/backoffice/banner/index.tsx:36
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:50
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:50
 #: src/app/[locale]/backoffice/loyalty-category/index.tsx:42
 #: src/app/[locale]/backoffice/merchant-tag/index.tsx:31
 #: src/app/[locale]/backoffice/merchants/detail/[id]/users.tsx:39
@@ -774,8 +774,8 @@ msgstr ""
 #: src/app/[locale]/backoffice/contracts/index.tsx:74
 #: src/app/[locale]/backoffice/document-template/components/form.tsx:101
 #: src/app/[locale]/backoffice/document-template/index.tsx:85
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:126
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:127
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:126
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:127
 #: src/app/[locale]/backoffice/loyalty-category/form.tsx:53
 #: src/app/[locale]/backoffice/loyalty-category/form.tsx:54
 #: src/app/[locale]/backoffice/loyalty-category/index.tsx:95
@@ -786,7 +786,7 @@ msgstr ""
 #: src/app/[locale]/backoffice/system/loan-products/index.tsx:135
 #: src/app/[locale]/merchant-web/reports/components/modal.tsx:65
 #: src/app/[locale]/merchant-web/requests/components/modal.tsx:87
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:152
+#: src/app/[locale]/merchant-web/requests/layout.tsx:152
 msgid "Description"
 msgstr ""
 
@@ -811,7 +811,7 @@ msgstr ""
 msgid "Document"
 msgstr ""
 
-#: src/app/[locale]/backoffice/documentation/page.client.tsx:11
+#: src/app/[locale]/backoffice/documentation/layout.tsx:11
 msgid "Document list page"
 msgstr ""
 
@@ -823,7 +823,7 @@ msgstr ""
 msgid "Document Templates"
 msgstr ""
 
-#: src/app/[locale]/backoffice/document-template/page.client.tsx:11
+#: src/app/[locale]/backoffice/document-template/layout.tsx:11
 msgid "Document templates page"
 msgstr ""
 
@@ -840,17 +840,17 @@ msgstr ""
 msgid "Documentation successfully updated"
 msgstr ""
 
-#: src/app/[locale]/backoffice/document-template/page.client.tsx:11
+#: src/app/[locale]/backoffice/document-template/layout.tsx:11
 msgid "Documentation Templates"
 msgstr ""
 
 #: src/app/[locale]/backoffice/documentation/index.tsx:38
 #: src/app/[locale]/backoffice/documentation/index.tsx:53
-#: src/app/[locale]/backoffice/documentation/page.client.tsx:11
+#: src/app/[locale]/backoffice/documentation/layout.tsx:11
 msgid "Documentations"
 msgstr ""
 
-#: src/app/[locale]/backoffice/clients/detail/[id]/page.client.tsx:57
+#: src/app/[locale]/backoffice/clients/detail/[id]/layout.tsx:57
 msgid "Documents"
 msgstr ""
 
@@ -859,7 +859,7 @@ msgid "Don’t have any account?"
 msgstr ""
 
 #: src/app/[locale]/backoffice/merchants/index.tsx:100
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:192
+#: src/app/[locale]/merchant-web/sales/layout.tsx:192
 msgid "Download"
 msgstr ""
 
@@ -887,7 +887,7 @@ msgstr ""
 #: src/app/[locale]/backoffice/banner/index.tsx:22
 #: src/app/[locale]/backoffice/documentation/index.tsx:67
 #: src/app/[locale]/backoffice/faq/index.tsx:77
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:72
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:72
 #: src/app/[locale]/backoffice/loyalty-category/index.tsx:32
 #: src/app/[locale]/backoffice/merchant-tag/index.tsx:21
 #: src/app/[locale]/backoffice/merchants/detail/[id]/stores.tsx:22
@@ -898,7 +898,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:33
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:33
 msgid "Edit {0}"
 msgstr ""
 
@@ -906,11 +906,11 @@ msgstr ""
 msgid "Edit banner"
 msgstr ""
 
-#: src/app/[locale]/backoffice/banner/edit/[id]/page.client.tsx:11
+#: src/app/[locale]/backoffice/banner/edit/[id]/layout.tsx:11
 msgid "Edit banner page"
 msgstr ""
 
-#: src/app/[locale]/backoffice/merchants/detail/[id]/page.client.tsx:56
+#: src/app/[locale]/backoffice/merchants/detail/[id]/layout.tsx:56
 msgid "Edit merchant"
 msgstr ""
 
@@ -918,17 +918,17 @@ msgstr ""
 msgid "Edit product"
 msgstr ""
 
-#: src/app/[locale]/backoffice/stores/detail/[id]/page.client.tsx:34
+#: src/app/[locale]/backoffice/stores/detail/[id]/layout.tsx:34
 #: src/app/[locale]/backoffice/stores/form.tsx:58
 msgid "Edit store"
 msgstr ""
 
-#: src/app/[locale]/backoffice/clients/detail/[id]/page.client.tsx:104
+#: src/app/[locale]/backoffice/clients/detail/[id]/layout.tsx:104
 msgid "Edit user"
 msgstr ""
 
-#: src/app/[locale]/auth/password-forget/page.client.tsx:50
-#: src/app/[locale]/auth/signup/page.client.tsx:73
+#: src/app/[locale]/auth/password-forget/layout.tsx:50
+#: src/app/[locale]/auth/signup/layout.tsx:73
 #: src/app/[locale]/backoffice/clients/index.tsx:345
 #: src/app/[locale]/backoffice/merchants/detail/[id]/stores.tsx:81
 #: src/app/[locale]/backoffice/merchants/detail/[id]/users.tsx:75
@@ -953,24 +953,24 @@ msgstr ""
 msgid "Enter your email"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:74
+#: src/app/[locale]/auth/signup/layout.tsx:74
 msgid "Enter your email address"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:68
+#: src/app/[locale]/auth/signup/layout.tsx:68
 msgid "Enter your first name"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:71
+#: src/app/[locale]/auth/signup/layout.tsx:71
 msgid "Enter your last name"
 msgstr ""
 
 #: src/app/[locale]/auth/login/form.tsx:53
-#: src/app/[locale]/auth/signup/page.client.tsx:98
+#: src/app/[locale]/auth/signup/layout.tsx:98
 msgid "Enter your password"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:90
+#: src/app/[locale]/auth/signup/layout.tsx:90
 msgid "Enter your phone number"
 msgstr ""
 
@@ -981,18 +981,18 @@ msgstr ""
 #: src/app/[locale]/backoffice/clients/detail/[id]/userLoans.tsx:32
 #: src/app/[locale]/backoffice/loans/index.tsx:52
 #: src/app/[locale]/backoffice/request/index.tsx:27
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:102
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:52
+#: src/app/[locale]/merchant-web/reports/layout.tsx:102
+#: src/app/[locale]/merchant-web/sales/layout.tsx:52
 msgid "Expired"
 msgstr ""
 
 #: src/app/[locale]/backoffice/banner/edit/[id]/index.tsx:90
 #: src/app/[locale]/backoffice/banner/form.tsx:27
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:122
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:122
 msgid "Expires at"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/page.client.tsx:68
+#: src/app/[locale]/backoffice/gamification/layout.tsx:68
 msgid "Expires date"
 msgstr ""
 
@@ -1010,7 +1010,7 @@ msgstr ""
 msgid "Family name"
 msgstr ""
 
-#: src/app/[locale]/backoffice/faq/page.client.tsx:11
+#: src/app/[locale]/backoffice/faq/layout.tsx:11
 #: src/app/[locale]/backoffice/system/user-permission/components/permission.tsx:257
 #: src/components/template/Sidebar/index.tsx:354
 msgid "Faq"
@@ -1029,7 +1029,7 @@ msgstr ""
 msgid "Faqs"
 msgstr ""
 
-#: src/app/[locale]/backoffice/faq/page.client.tsx:11
+#: src/app/[locale]/backoffice/faq/layout.tsx:11
 msgid "Faqs list page"
 msgstr ""
 
@@ -1044,7 +1044,7 @@ msgstr ""
 msgid "Fee percent"
 msgstr ""
 
-#: src/app/[locale]/backoffice/file-manager/page.client.tsx:11
+#: src/app/[locale]/backoffice/file-manager/layout.tsx:11
 msgid "File list page"
 msgstr ""
 
@@ -1052,7 +1052,7 @@ msgstr ""
 msgid "File manager"
 msgstr ""
 
-#: src/app/[locale]/backoffice/file-manager/page.client.tsx:11
+#: src/app/[locale]/backoffice/file-manager/layout.tsx:11
 msgid "File manger"
 msgstr ""
 
@@ -1065,7 +1065,7 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:67
+#: src/app/[locale]/auth/signup/layout.tsx:67
 #: src/app/[locale]/backoffice/clients/merchant-users/index.tsx:44
 #: src/app/[locale]/backoffice/merchants/detail/[id]/users.tsx:69
 #: src/app/[locale]/profile/info/index.tsx:33
@@ -1082,7 +1082,7 @@ msgstr ""
 msgid "Fixed"
 msgstr ""
 
-#: src/app/[locale]/auth/password-forget/page.client.tsx:28
+#: src/app/[locale]/auth/password-forget/layout.tsx:28
 msgid "Forget password"
 msgstr ""
 
@@ -1094,20 +1094,20 @@ msgstr ""
 msgid "Gamifcation"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/page.client.tsx:40
+#: src/app/[locale]/backoffice/gamification/layout.tsx:40
 #: src/components/template/Sidebar/index.tsx:246
 msgid "Gamification"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:45
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:45
 msgid "Gamification deleted"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:85
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:85
 msgid "Gamification name"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:64
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:64
 msgid "Gamification updated"
 msgstr ""
 
@@ -1167,11 +1167,11 @@ msgstr ""
 msgid "Goal name"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:88
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:88
 msgid "Goal policy"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:131
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:131
 msgid "Goals"
 msgstr ""
 
@@ -1179,7 +1179,7 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:100
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:100
 msgid "Hide"
 msgstr ""
 
@@ -1226,8 +1226,8 @@ msgstr "Ảnh"
 #: src/app/[locale]/backoffice/stores/index.tsx:35
 #: src/app/[locale]/backoffice/system/categories/form.tsx:50
 #: src/app/[locale]/backoffice/system/loan-products/index.tsx:209
-#: src/app/[locale]/merchant-web/users/page.client.tsx:19
-#: src/app/[locale]/merchant-web/users/page.client.tsx:22
+#: src/app/[locale]/merchant-web/users/layout.tsx:19
+#: src/app/[locale]/merchant-web/users/layout.tsx:22
 #: src/components/data/merchantUserWithStoreForm.tsx:125
 #: src/components/form/fields/MerchantAndStoreSharedFields.tsx:61
 msgid "Inactive"
@@ -1237,7 +1237,7 @@ msgstr ""
 msgid "Individual"
 msgstr ""
 
-#: src/app/[locale]/invitation/[token]/page.client.tsx:11
+#: src/app/[locale]/invitation/[token]/layout.tsx:11
 msgid "Invitation"
 msgstr ""
 
@@ -1254,12 +1254,12 @@ msgid "Invite"
 msgstr ""
 
 #: src/app/[locale]/backoffice/merchants/detail/[id]/users.tsx:51
-#: src/app/[locale]/backoffice/stores/detail/[id]/page.client.tsx:52
+#: src/app/[locale]/backoffice/stores/detail/[id]/layout.tsx:52
 #: src/components/data/merchantUserWithStoreForm.tsx:53
 msgid "Invite user"
 msgstr ""
 
-#: src/app/[locale]/backoffice/invoices/page.client.tsx:11
+#: src/app/[locale]/backoffice/invoices/layout.tsx:11
 #: src/app/[locale]/backoffice/system/user-permission/components/permission.tsx:60
 #: src/components/template/Sidebar/index.tsx:201
 msgid "Invoice"
@@ -1274,7 +1274,7 @@ msgstr ""
 msgid "Invoice created"
 msgstr ""
 
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:147
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:147
 msgid "Invoice number"
 msgstr ""
 
@@ -1283,7 +1283,7 @@ msgstr ""
 #: src/app/[locale]/backoffice/invoices/index.tsx:98
 #: src/app/[locale]/backoffice/loans/components/schedule.tsx:104
 #: src/app/[locale]/backoffice/request/index.tsx:95
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:104
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:104
 #: src/components/template/MerchantSidebar/index.tsx:43
 msgid "Invoices"
 msgstr ""
@@ -1355,7 +1355,7 @@ msgstr ""
 msgid "KYC_1 THIRD PARTY APPROVED"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:70
+#: src/app/[locale]/auth/signup/layout.tsx:70
 #: src/app/[locale]/backoffice/clients/merchant-users/index.tsx:51
 #: src/app/[locale]/profile/info/index.tsx:36
 #: src/app/[locale]/profile/info/index.tsx:37
@@ -1380,7 +1380,7 @@ msgid "Link"
 msgstr ""
 
 #: src/app/[locale]/backoffice/bank/index.tsx:29
-#: src/app/[locale]/backoffice/bank/page.client.tsx:11
+#: src/app/[locale]/backoffice/bank/layout.tsx:11
 msgid "List of banks"
 msgstr ""
 
@@ -1389,7 +1389,7 @@ msgid "Load more"
 msgstr ""
 
 #: src/app/[locale]/backoffice/invoices/index.tsx:133
-#: src/app/[locale]/backoffice/loans/page.client.tsx:11
+#: src/app/[locale]/backoffice/loans/layout.tsx:11
 #: src/app/[locale]/backoffice/request/index.tsx:106
 #: src/app/[locale]/backoffice/system/user-permission/components/permission.tsx:30
 #: src/components/template/MerchantSidebar/index.tsx:74
@@ -1397,14 +1397,14 @@ msgstr ""
 msgid "Loan"
 msgstr ""
 
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:181
+#: src/app/[locale]/merchant-web/requests/layout.tsx:181
 msgid "Loan number"
 msgstr ""
 
 #: src/app/[locale]/backoffice/loans/index.tsx:384
-#: src/app/[locale]/backoffice/system/loan-products/page.client.tsx:11
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:260
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:297
+#: src/app/[locale]/backoffice/system/loan-products/layout.tsx:11
+#: src/app/[locale]/merchant-web/reports/layout.tsx:260
+#: src/app/[locale]/merchant-web/sales/layout.tsx:297
 msgid "Loan product"
 msgstr ""
 
@@ -1418,11 +1418,11 @@ msgstr ""
 msgid "Loan products"
 msgstr ""
 
-#: src/app/[locale]/backoffice/request/page.client.tsx:11
+#: src/app/[locale]/backoffice/request/layout.tsx:11
 msgid "Loan request"
 msgstr ""
 
-#: src/app/[locale]/backoffice/clients/detail/[id]/page.client.tsx:47
+#: src/app/[locale]/backoffice/clients/detail/[id]/layout.tsx:47
 #: src/app/[locale]/backoffice/loans/index.tsx:245
 msgid "Loans"
 msgstr ""
@@ -1434,7 +1434,7 @@ msgstr ""
 
 #: src/app/[locale]/auth/login/form.tsx:72
 #: src/app/[locale]/auth/login/index.tsx:13
-#: src/app/[locale]/auth/password-forget/page.client.tsx:58
+#: src/app/[locale]/auth/password-forget/layout.tsx:58
 msgid "Login"
 msgstr "Đăng Nhập"
 
@@ -1493,10 +1493,10 @@ msgstr ""
 #: src/app/[locale]/backoffice/loans/index.tsx:315
 #: src/app/[locale]/backoffice/request/index.tsx:109
 #: src/app/[locale]/backoffice/system/user-permission/components/permission.tsx:90
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:156
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:216
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:164
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:263
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:156
+#: src/app/[locale]/merchant-web/reports/layout.tsx:216
+#: src/app/[locale]/merchant-web/requests/layout.tsx:164
+#: src/app/[locale]/merchant-web/sales/layout.tsx:263
 msgid "Merchant"
 msgstr ""
 
@@ -1504,11 +1504,11 @@ msgstr ""
 msgid "Merchant contract"
 msgstr ""
 
-#: src/app/[locale]/backoffice/merchants/detail/[id]/page.client.tsx:54
+#: src/app/[locale]/backoffice/merchants/detail/[id]/layout.tsx:54
 msgid "Merchant detail"
 msgstr ""
 
-#: src/app/[locale]/backoffice/merchants/detail/[id]/page.client.tsx:31
+#: src/app/[locale]/backoffice/merchants/detail/[id]/layout.tsx:31
 msgid "Merchant info"
 msgstr ""
 
@@ -1516,12 +1516,12 @@ msgstr ""
 msgid "Merchant policy"
 msgstr ""
 
-#: src/app/[locale]/backoffice/merchant-tag/page.client.tsx:11
+#: src/app/[locale]/backoffice/merchant-tag/layout.tsx:11
 msgid "Merchant tag list page"
 msgstr ""
 
 #: src/app/[locale]/backoffice/merchant-tag/index.tsx:38
-#: src/app/[locale]/backoffice/merchant-tag/page.client.tsx:11
+#: src/app/[locale]/backoffice/merchant-tag/layout.tsx:11
 msgid "Merchant tags"
 msgstr ""
 
@@ -1530,8 +1530,8 @@ msgid "Merchant user not found"
 msgstr ""
 
 #: src/app/[locale]/backoffice/clients/merchant-users/index.tsx:21
-#: src/app/[locale]/backoffice/clients/merchant-users/page.client.tsx:11
-#: src/app/[locale]/backoffice/merchants/detail/[id]/page.client.tsx:41
+#: src/app/[locale]/backoffice/clients/merchant-users/layout.tsx:11
+#: src/app/[locale]/backoffice/merchants/detail/[id]/layout.tsx:41
 #: src/components/template/MerchantSidebar/index.tsx:38
 #: src/components/template/Sidebar/index.tsx:163
 msgid "Merchant users"
@@ -1539,7 +1539,7 @@ msgstr ""
 
 #: src/app/[locale]/backoffice/gamification/[id]/edit/Goals/Merchant.tsx:55
 #: src/app/[locale]/backoffice/merchants/index.tsx:83
-#: src/app/[locale]/backoffice/merchants/page.client.tsx:11
+#: src/app/[locale]/backoffice/merchants/layout.tsx:11
 #: src/components/template/Sidebar/index.tsx:171
 #: src/components/template/Sidebar/index.tsx:181
 msgid "Merchants"
@@ -1576,28 +1576,28 @@ msgstr ""
 msgid "Monthly"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:27
-#: src/app/[locale]/auth/signup/page.client.tsx:27
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:27
+#: src/app/[locale]/auth/signup/layout.tsx:27
 msgid "Must contain 8 or more characters"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:30
-#: src/app/[locale]/auth/signup/page.client.tsx:30
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:30
+#: src/app/[locale]/auth/signup/layout.tsx:30
 msgid "Must contain a digit"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:29
-#: src/app/[locale]/auth/signup/page.client.tsx:29
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:29
+#: src/app/[locale]/auth/signup/layout.tsx:29
 msgid "Must contain a lower case character"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:31
-#: src/app/[locale]/auth/signup/page.client.tsx:31
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:31
+#: src/app/[locale]/auth/signup/layout.tsx:31
 msgid "Must contain a symbol"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:28
-#: src/app/[locale]/auth/signup/page.client.tsx:28
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:28
+#: src/app/[locale]/auth/signup/layout.tsx:28
 msgid "Must contain an upper case character"
 msgstr ""
 
@@ -1621,9 +1621,9 @@ msgstr ""
 #: src/app/[locale]/backoffice/gamification/[id]/edit/Goals/PurchaseAmount.tsx:15
 #: src/app/[locale]/backoffice/gamification/[id]/edit/Goals/PurchaseCount.tsx:15
 #: src/app/[locale]/backoffice/gamification/[id]/edit/Goals/TotalAmount.tsx:15
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:84
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:84
 #: src/app/[locale]/backoffice/gamification/CreateGamificationDrawer.tsx:18
-#: src/app/[locale]/backoffice/gamification/page.client.tsx:64
+#: src/app/[locale]/backoffice/gamification/layout.tsx:64
 #: src/app/[locale]/backoffice/loyalty-category/form.tsx:50
 #: src/app/[locale]/backoffice/loyalty-category/index.tsx:81
 #: src/app/[locale]/backoffice/merchant-tag/index.tsx:70
@@ -1639,12 +1639,12 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:68
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:68
 #: src/app/[locale]/profile/password/index.tsx:41
 msgid "New password"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:32
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:32
 msgid "New password and confirm password are not same"
 msgstr ""
 
@@ -1664,7 +1664,7 @@ msgstr ""
 #: src/app/[locale]/backoffice/clients/detail/[id]/userDoc.tsx:76
 #: src/app/[locale]/backoffice/contracts/index.tsx:59
 #: src/app/[locale]/backoffice/document-template/index.tsx:70
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:219
+#: src/app/[locale]/merchant-web/requests/layout.tsx:219
 msgid "No data"
 msgstr ""
 
@@ -1672,8 +1672,8 @@ msgstr ""
 msgid "No implementation"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:146
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:200
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:146
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:200
 msgid "no implemented"
 msgstr ""
 
@@ -1710,7 +1710,7 @@ msgstr ""
 #: src/app/[locale]/backoffice/invoices/index.tsx:29
 #: src/app/[locale]/backoffice/loans/components/schedule.tsx:59
 #: src/app/[locale]/backoffice/loans/index.tsx:63
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:37
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:37
 msgid "Overdue"
 msgstr ""
 
@@ -1739,43 +1739,43 @@ msgstr ""
 #: src/app/[locale]/backoffice/clients/detail/[id]/userLoans.tsx:45
 #: src/app/[locale]/backoffice/invoices/index.tsx:27
 #: src/app/[locale]/backoffice/loans/components/schedule.tsx:61
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:33
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:33
 msgid "Paid"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/page.client.tsx:65
+#: src/app/[locale]/backoffice/gamification/layout.tsx:65
 msgid "Participants"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:95
+#: src/app/[locale]/auth/signup/layout.tsx:95
 #: src/app/[locale]/backoffice/payment-method/renderPreferredField.tsx:52
 #: src/app/[locale]/backoffice/payment-method/renderPreferredField.tsx:53
 msgid "Password"
 msgstr "Mật khẩu"
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:95
-#: src/app/[locale]/auth/signup/page.client.tsx:107
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:95
+#: src/app/[locale]/auth/signup/layout.tsx:107
 msgid "Password must be"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:59
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:59
 #: src/app/[locale]/profile/password/index.tsx:22
 msgid "Password successfully changed"
 msgstr ""
 
-#: src/app/[locale]/auth/password-forget/page.client.tsx:39
+#: src/app/[locale]/auth/password-forget/layout.tsx:39
 msgid "Password successfully reseted"
 msgstr ""
 
 #: src/app/[locale]/backoffice/invoices/index.tsx:61
 #: src/app/[locale]/backoffice/request/index.tsx:59
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:67
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:67
 msgid "Pay"
 msgstr ""
 
 #: src/app/[locale]/backoffice/invoices/index.tsx:65
 #: src/app/[locale]/backoffice/request/index.tsx:63
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:71
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:71
 msgid "Pay by SPC token"
 msgstr ""
 
@@ -1784,12 +1784,12 @@ msgstr ""
 msgid "Pay date"
 msgstr ""
 
-#: src/app/[locale]/backoffice/payment-method/page.client.tsx:11
+#: src/app/[locale]/backoffice/payment-method/layout.tsx:11
 msgid "Payment method"
 msgstr ""
 
 #: src/app/[locale]/backoffice/payment-method/index.tsx:35
-#: src/app/[locale]/backoffice/payment-method/page.client.tsx:11
+#: src/app/[locale]/backoffice/payment-method/layout.tsx:11
 #: src/components/template/Sidebar/index.tsx:340
 msgid "Payment methods"
 msgstr ""
@@ -1805,10 +1805,10 @@ msgstr ""
 #: src/app/[locale]/backoffice/loans/components/schedule.tsx:57
 #: src/app/[locale]/backoffice/loans/index.tsx:54
 #: src/app/[locale]/backoffice/request/index.tsx:29
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:31
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:104
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:31
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:54
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:31
+#: src/app/[locale]/merchant-web/reports/layout.tsx:104
+#: src/app/[locale]/merchant-web/requests/layout.tsx:31
+#: src/app/[locale]/merchant-web/sales/layout.tsx:54
 msgid "Pending"
 msgstr ""
 
@@ -1822,14 +1822,14 @@ msgstr ""
 msgid "Personal info"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:87
+#: src/app/[locale]/auth/signup/layout.tsx:87
 #: src/app/[locale]/backoffice/clients/index.tsx:341
 #: src/app/[locale]/backoffice/loans/index.tsx:182
 #: src/app/[locale]/backoffice/loans/index.tsx:348
 #: src/app/[locale]/backoffice/merchants/detail/[id]/stores.tsx:76
 #: src/app/[locale]/backoffice/stores/index.tsx:100
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:171
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:175
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:171
+#: src/app/[locale]/merchant-web/requests/layout.tsx:175
 #: src/app/[locale]/profile/phone/index.tsx:23
 msgid "Phone"
 msgstr "Di động"
@@ -1884,15 +1884,15 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: src/app/[locale]/profile/email/page.client.tsx:11
+#: src/app/[locale]/profile/email/layout.tsx:11
 msgid "Profile email"
 msgstr ""
 
-#: src/app/[locale]/profile/info/page.client.tsx:11
+#: src/app/[locale]/profile/info/layout.tsx:11
 msgid "Profile info"
 msgstr ""
 
-#: src/app/[locale]/profile/phone/page.client.tsx:11
+#: src/app/[locale]/profile/phone/layout.tsx:11
 msgid "Profile phone"
 msgstr ""
 
@@ -1932,11 +1932,11 @@ msgstr ""
 msgid "Question"
 msgstr ""
 
-#: src/app/[locale]/auth/password-forget/page.client.tsx:46
+#: src/app/[locale]/auth/password-forget/layout.tsx:46
 msgid "Receive code by email"
 msgstr ""
 
-#: src/app/[locale]/auth/password-forget/page.client.tsx:47
+#: src/app/[locale]/auth/password-forget/layout.tsx:47
 msgid "Receive code by phone"
 msgstr ""
 
@@ -1972,21 +1972,21 @@ msgstr ""
 
 #: src/app/[locale]/backoffice/invoices/index.tsx:73
 #: src/app/[locale]/backoffice/request/index.tsx:71
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:79
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:79
 msgid "Reject"
 msgstr ""
 
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:202
+#: src/app/[locale]/merchant-web/requests/layout.tsx:202
 msgid "Reject at"
 msgstr ""
 
 #: src/app/[locale]/backoffice/clients/detail/[id]/userLoans.tsx:26
 #: src/app/[locale]/backoffice/loans/index.tsx:46
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:35
+#: src/app/[locale]/merchant-web/requests/layout.tsx:35
 msgid "Rejected"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:38
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:38
 msgid "Reload"
 msgstr ""
 
@@ -2012,11 +2012,11 @@ msgstr ""
 msgid "Request"
 msgstr ""
 
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:131
+#: src/app/[locale]/merchant-web/requests/layout.tsx:131
 msgid "Request type"
 msgstr ""
 
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:90
+#: src/app/[locale]/merchant-web/requests/layout.tsx:90
 #: src/components/template/MerchantSidebar/index.tsx:48
 msgid "Requests"
 msgstr ""
@@ -2024,19 +2024,19 @@ msgstr ""
 #: src/app/[locale]/backoffice/banner/form.tsx:18
 #: src/app/[locale]/backoffice/banner/form.tsx:23
 #: src/app/[locale]/backoffice/banner/form.tsx:30
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:84
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:88
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:118
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:84
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:88
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:118
 #: src/app/[locale]/backoffice/gamification/CreateGamificationDrawer.tsx:18
 msgid "required"
 msgstr ""
 
-#: src/app/[locale]/auth/password-reset/page.client.tsx:16
+#: src/app/[locale]/auth/password-reset/layout.tsx:16
 msgid "Reset password"
 msgstr ""
 
-#: src/app/[locale]/auth/password-forget/page.client.tsx:29
-#: src/app/[locale]/auth/password-reset/page.client.tsx:17
+#: src/app/[locale]/auth/password-forget/layout.tsx:29
+#: src/app/[locale]/auth/password-reset/layout.tsx:17
 msgid "Reset your password here"
 msgstr ""
 
@@ -2055,12 +2055,12 @@ msgstr ""
 msgid "Sales report"
 msgstr ""
 
-#: src/app/[locale]/auth/password-create/[id]/page.client.tsx:105
+#: src/app/[locale]/auth/password-create/[id]/layout.tsx:105
 #: src/app/[locale]/backoffice/bank/index.tsx:36
 #: src/app/[locale]/backoffice/banner/edit/[id]/index.tsx:44
 #: src/app/[locale]/backoffice/documentation/index.tsx:45
 #: src/app/[locale]/backoffice/faq/index.tsx:49
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:242
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:242
 #: src/app/[locale]/backoffice/payment-method/index.tsx:97
 #: src/app/[locale]/backoffice/system/user-permission/components/permission.tsx:359
 #: src/app/[locale]/profile/components/infoWithAvatar.tsx:46
@@ -2069,7 +2069,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:275
+#: src/app/[locale]/merchant-web/reports/layout.tsx:275
 msgid "Scan me"
 msgstr ""
 
@@ -2094,7 +2094,7 @@ msgstr ""
 msgid "Select contract type"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:89
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:89
 msgid "Select goal policy"
 msgstr ""
 
@@ -2123,8 +2123,8 @@ msgstr ""
 msgid "Select product"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:76
-#: src/app/[locale]/auth/signup/page.client.tsx:78
+#: src/app/[locale]/auth/signup/layout.tsx:76
+#: src/app/[locale]/auth/signup/layout.tsx:78
 #: src/components/template/Header/RegionSelector.tsx:19
 #: src/components/template/Header/RegionSelector.tsx:31
 msgid "Select region"
@@ -2147,8 +2147,8 @@ msgid "Select transaction type"
 msgstr ""
 
 #: src/app/[locale]/backoffice/gamification/[id]/edit/Actions/ChangeLoyaltyLevel.tsx:14
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:104
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:105
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:104
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:105
 msgid "Select user loyalty"
 msgstr ""
 
@@ -2181,7 +2181,7 @@ msgstr ""
 msgid "Show indicators"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:98
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:98
 msgid "Show or hide gamification"
 msgstr ""
 
@@ -2189,20 +2189,20 @@ msgstr ""
 msgid "Show thumbnail"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:121
+#: src/app/[locale]/auth/signup/layout.tsx:121
 msgid "Sign in"
 msgstr ""
 
-#: src/app/[locale]/auth/login/page.client.tsx:9
+#: src/app/[locale]/auth/login/layout.tsx:9
 msgid "Sign in to StorePay"
 msgstr ""
 
 #: src/app/[locale]/auth/login/form.tsx:79
-#: src/app/[locale]/auth/signup/page.client.tsx:115
+#: src/app/[locale]/auth/signup/layout.tsx:115
 msgid "Sign Up"
 msgstr ""
 
-#: src/app/[locale]/auth/signup/page.client.tsx:39
+#: src/app/[locale]/auth/signup/layout.tsx:39
 msgid "Sign Up to StorePay"
 msgstr ""
 
@@ -2210,7 +2210,7 @@ msgstr ""
 msgid "Signed date"
 msgstr ""
 
-#: src/app/[locale]/auth/login/page.client.tsx:8
+#: src/app/[locale]/auth/login/layout.tsx:8
 msgid "Signin Page"
 msgstr ""
 
@@ -2236,7 +2236,7 @@ msgstr ""
 msgid "Specific"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:117
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:117
 #: src/app/[locale]/backoffice/gamification/CreateGamificationDrawer.tsx:19
 msgid "Start at"
 msgstr ""
@@ -2245,7 +2245,7 @@ msgstr ""
 msgid "Start date"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/page.client.tsx:67
+#: src/app/[locale]/backoffice/gamification/layout.tsx:67
 msgid "Starts date"
 msgstr ""
 
@@ -2259,7 +2259,7 @@ msgstr ""
 #: src/app/[locale]/backoffice/clients/index.tsx:349
 #: src/app/[locale]/backoffice/contracts/index.tsx:79
 #: src/app/[locale]/backoffice/document-template/index.tsx:90
-#: src/app/[locale]/backoffice/gamification/page.client.tsx:66
+#: src/app/[locale]/backoffice/gamification/layout.tsx:66
 #: src/app/[locale]/backoffice/invoices/index.tsx:142
 #: src/app/[locale]/backoffice/loyalty-category/form.tsx:57
 #: src/app/[locale]/backoffice/merchant-tag/form.tsx:40
@@ -2274,7 +2274,7 @@ msgstr ""
 #: src/app/[locale]/backoffice/system/categories/index.tsx:77
 #: src/app/[locale]/backoffice/system/loan-products/index.tsx:74
 #: src/app/[locale]/backoffice/system/loan-products/index.tsx:198
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:177
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:177
 msgid "Status"
 msgstr ""
 
@@ -2283,26 +2283,26 @@ msgstr ""
 #: src/app/[locale]/backoffice/loans/index.tsx:310
 #: src/app/[locale]/backoffice/request/index.tsx:108
 #: src/app/[locale]/backoffice/system/user-permission/components/permission.tsx:101
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:211
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:169
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:258
+#: src/app/[locale]/merchant-web/reports/layout.tsx:211
+#: src/app/[locale]/merchant-web/requests/layout.tsx:169
+#: src/app/[locale]/merchant-web/sales/layout.tsx:258
 msgid "Store"
 msgstr ""
 
-#: src/app/[locale]/backoffice/stores/detail/[id]/page.client.tsx:31
+#: src/app/[locale]/backoffice/stores/detail/[id]/layout.tsx:31
 msgid "Store detail"
 msgstr ""
 
-#: src/app/[locale]/backoffice/merchants/detail/[id]/page.client.tsx:36
+#: src/app/[locale]/backoffice/merchants/detail/[id]/layout.tsx:36
 #: src/app/[locale]/backoffice/merchants/detail/[id]/stores.tsx:29
 #: src/app/[locale]/backoffice/stores/index.tsx:73
-#: src/app/[locale]/backoffice/stores/page.client.tsx:11
+#: src/app/[locale]/backoffice/stores/layout.tsx:11
 #: src/components/template/MerchantSidebar/index.tsx:69
 #: src/components/template/Sidebar/index.tsx:189
 msgid "Stores"
 msgstr ""
 
-#: src/app/[locale]/auth/password-forget/page.client.tsx:55
+#: src/app/[locale]/auth/password-forget/layout.tsx:55
 #: src/app/[locale]/profile/components/addEmailOrPhoneModal.tsx:40
 msgid "Submit"
 msgstr "Áp dụng"
@@ -2433,8 +2433,8 @@ msgstr ""
 #: src/app/[locale]/backoffice/invoices/index.tsx:137
 #: src/app/[locale]/backoffice/loans/index.tsx:331
 #: src/app/[locale]/backoffice/request/index.tsx:110
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:231
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:278
+#: src/app/[locale]/merchant-web/reports/layout.tsx:231
+#: src/app/[locale]/merchant-web/sales/layout.tsx:278
 msgid "Total amount"
 msgstr ""
 
@@ -2443,7 +2443,7 @@ msgid "Total branches"
 msgstr ""
 
 #: src/app/[locale]/backoffice/loans/index.tsx:341
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:246
+#: src/app/[locale]/merchant-web/reports/layout.tsx:246
 msgid "Total penalty"
 msgstr ""
 
@@ -2476,11 +2476,11 @@ msgstr ""
 #: src/app/[locale]/backoffice/loans/index.tsx:56
 #: src/app/[locale]/backoffice/loans/index.tsx:67
 #: src/app/[locale]/backoffice/request/index.tsx:31
-#: src/app/[locale]/merchant-web/invoices/page.client.tsx:39
-#: src/app/[locale]/merchant-web/reports/page.client.tsx:106
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:37
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:48
-#: src/app/[locale]/merchant-web/sales/page.client.tsx:56
+#: src/app/[locale]/merchant-web/invoices/layout.tsx:39
+#: src/app/[locale]/merchant-web/reports/layout.tsx:106
+#: src/app/[locale]/merchant-web/requests/layout.tsx:37
+#: src/app/[locale]/merchant-web/requests/layout.tsx:48
+#: src/app/[locale]/merchant-web/sales/layout.tsx:56
 msgid "Unknown"
 msgstr ""
 
@@ -2495,7 +2495,7 @@ msgstr ""
 #: src/app/[locale]/backoffice/clients/index.tsx:367
 #: src/app/[locale]/backoffice/invoices/index.tsx:152
 #: src/app/[locale]/backoffice/request/index.tsx:126
-#: src/app/[locale]/merchant-web/requests/page.client.tsx:209
+#: src/app/[locale]/merchant-web/requests/layout.tsx:209
 msgid "Updated at"
 msgstr ""
 
@@ -2504,12 +2504,12 @@ msgstr ""
 msgid "Updated date"
 msgstr ""
 
-#: src/app/[locale]/backoffice/clients/page.client.tsx:11
+#: src/app/[locale]/backoffice/clients/layout.tsx:11
 #: src/app/[locale]/backoffice/system/user-permission/components/permission.tsx:209
 msgid "User"
 msgstr ""
 
-#: src/app/[locale]/backoffice/clients/detail/[id]/page.client.tsx:87
+#: src/app/[locale]/backoffice/clients/detail/[id]/layout.tsx:87
 msgid "User audit logs"
 msgstr ""
 
@@ -2517,7 +2517,7 @@ msgstr ""
 msgid "User contract"
 msgstr ""
 
-#: src/app/[locale]/backoffice/clients/detail/[id]/page.client.tsx:97
+#: src/app/[locale]/backoffice/clients/detail/[id]/layout.tsx:97
 msgid "User detail"
 msgstr ""
 
@@ -2530,11 +2530,11 @@ msgstr ""
 msgid "User ID"
 msgstr ""
 
-#: src/app/[locale]/backoffice/clients/detail/[id]/page.client.tsx:37
+#: src/app/[locale]/backoffice/clients/detail/[id]/layout.tsx:37
 msgid "User info"
 msgstr ""
 
-#: src/app/[locale]/backoffice/loyalty-category/page.client.tsx:11
+#: src/app/[locale]/backoffice/loyalty-category/layout.tsx:11
 msgid "User loyalty categories"
 msgstr ""
 
@@ -2547,7 +2547,7 @@ msgstr ""
 msgid "User name"
 msgstr ""
 
-#: src/app/[locale]/backoffice/system/user-permission/page.client.tsx:11
+#: src/app/[locale]/backoffice/system/user-permission/layout.tsx:11
 #: src/components/template/Sidebar/index.tsx:260
 msgid "User permission"
 msgstr ""
@@ -2574,7 +2574,7 @@ msgid "Username"
 msgstr ""
 
 #: src/app/[locale]/backoffice/merchants/detail/[id]/users.tsx:48
-#: src/app/[locale]/merchant-web/users/page.client.tsx:28
+#: src/app/[locale]/merchant-web/users/layout.tsx:28
 #: src/components/template/Sidebar/index.tsx:154
 msgid "Users"
 msgstr ""
@@ -2592,11 +2592,11 @@ msgstr ""
 msgid "Verify"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:99
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:99
 msgid "Visible"
 msgstr ""
 
-#: src/app/[locale]/backoffice/gamification/[id]/edit/page.client.tsx:97
+#: src/app/[locale]/backoffice/gamification/[id]/edit/layout.tsx:97
 msgid "Visible on users"
 msgstr ""
 
@@ -2608,7 +2608,7 @@ msgstr ""
 msgid "Wallet information"
 msgstr ""
 
-#: src/app/[locale]/auth/password-reset/page.client.tsx:18
+#: src/app/[locale]/auth/password-reset/layout.tsx:18
 msgid "We sent 6 digits number earlier. Please enter the confirmation number."
 msgstr ""
 
@@ -2656,7 +2656,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: src/app/[locale]/auth/password-forget/page.client.tsx:51
+#: src/app/[locale]/auth/password-forget/layout.tsx:51
 msgid "Your email address here"
 msgstr ""
 

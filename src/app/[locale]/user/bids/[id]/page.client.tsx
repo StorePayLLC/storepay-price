@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Card, Typography, Tag, Button, Flex, Image, Divider, Modal, Input, Form } from 'antd';
 import { ArrowLeftOutlined, ClockCircleOutlined, ShopOutlined, LockOutlined } from '@ant-design/icons';
-import Link from 'next/link';
+import Link from '@/components/link';
 
 const { Title, Text } = Typography;
 
@@ -69,7 +69,7 @@ const BidDetailClient: React.FC = () => {
   return (
     <div>
       <Flex justify="space-between" align="center" className="mb-6">
-        <Link href="/src/app/app/%5Blocale%5D/user/bids">
+        <Link href="/user/bids">
           <Button 
             icon={<ArrowLeftOutlined />} 
             className="border-gray-700 text-white"

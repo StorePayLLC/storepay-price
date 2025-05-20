@@ -1,0 +1,10 @@
+fragment kyc on Kyc {
+    id
+    userId
+    status
+    expiresAt
+    confirmedAt
+    createdAt
+    updatedAt
+    preferences
+}

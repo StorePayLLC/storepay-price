@@ -15,6 +15,7 @@ import {
   LogoutOutlined,
 } from '@ant-design/icons';
 import {useAuth} from "@/utils/providers";
+import UserState from "@/app/[locale]/user/components/userState";
 
 const { Sider, Content, Header } = Layout;
 
@@ -93,7 +94,10 @@ export default function UserLayout({
             </Button>
           </div>
         </Sider>
-        <Content className="bg-[#1a1a1a] p-6">{children}</Content>
+        <Content className="bg-[#1a1a1a] p-6">
+          <UserState />
+          {children}
+        </Content>
       </Layout>
     </Layout>
   );

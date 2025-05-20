@@ -1,0 +1,10 @@
+query GetUserKycs($filter: KycFilter) {
+    me {
+        ...user
+        kycs(filter: $filter){
+            nodes {
+                ...kyc
+            }
+        }
+    }
+}

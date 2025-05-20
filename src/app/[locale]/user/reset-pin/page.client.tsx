@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Card, Form, Input, Button, Typography } from 'antd';
 import { LockOutlined } from '@ant-design/icons';
-import Link from 'next/link';
+import Link from '@/components/link';
 import { useRouter } from 'next/navigation';
 
 const { Title, Text } = Typography;

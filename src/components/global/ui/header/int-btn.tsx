@@ -2,7 +2,7 @@
 import React from 'react';
 import { Dropdown, MenuProps } from 'antd';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@/components/link';
 
 import { globe, id, mn, vi } from '@/assets/images/flags';
 import GlobeIcon from '@/assets/images/global/globe-1.svg';

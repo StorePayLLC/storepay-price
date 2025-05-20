@@ -1,8 +1,5 @@
 import { Layout } from 'antd';
-import Link from 'next/link';
-import Image from 'next/image';
-
-const { Content } = Layout;
+import Link from '@/components/link';
 
 export default function AuthLayout({
   children,

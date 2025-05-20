@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import {Card, Form, Input, Select, Button, Avatar, Upload, Typography, Flex, Divider, Modal} from 'antd';
 import { UserOutlined, EditOutlined, CreditCardOutlined, WalletOutlined, LockOutlined } from '@ant-design/icons';
+import {useUser} from "@/utils/providers";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
 
 const ProfilePage: React.FC = () => {
+  const {user} = useUser();
   const [pinModalVisible, setPinModalVisible] = useState(false);
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
@@ -54,9 +56,9 @@ const ProfilePage: React.FC = () => {
                 </Upload>
               </div>
               <Title level={4} className="mt-4 mb-0 text-white">
-                John Doe
+                {user?.firstName}
               </Title>
-              <Text type="secondary">Member since March 2024</Text>
+              <Text type="secondary">{user?.citizenIdNumber}</Text>
             </Flex>
 
             <Divider className="my-3 border-gray-800" />

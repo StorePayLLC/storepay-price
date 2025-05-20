@@ -1,10 +1,10 @@
 'use client';
-import React, { createContext, ReactNode, useEffect, useState } from 'react';
+import React, {createContext, ReactNode, useContext, useEffect, useState} from 'react';
 import Cookie from 'js-cookie';
 
 import { useRouter } from '@/components/navigation';
 import { MeQuery, useMeQuery } from '@/gql/query/me.generated';
-import { useAuth } from '@/utils/providers/AuthContext';
+import {AuthContext, useAuth} from '@/utils/providers/AuthContext';
 
 type ContextType = {
   user: MeQuery['me'];

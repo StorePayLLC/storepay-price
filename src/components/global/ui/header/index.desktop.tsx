@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/link';
 
 import LogoWhite from '@/assets/images/global/logo-white.svg';
 import LogoBlack from '@/assets/images/global/storepay-horizontal.svg';

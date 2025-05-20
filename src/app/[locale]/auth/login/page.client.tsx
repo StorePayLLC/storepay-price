@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import {Card, Form, Input, Button, Typography, Divider, notification} from 'antd';
 import { LockOutlined, MailOutlined } from '@ant-design/icons';
-import Link from 'next/link';
+import Link from '@/components/link';
 import {loginWithPassword, useAuth} from "@/utils/providers";
 import { useRouter } from '@/components/navigation';
 
@@ -80,7 +80,7 @@ export default function LoginClient() {
 
         <Form.Item className="mb-2">
           <Link
-            href="/src/app/app/%5Blocale%5D/auth/forgot-password"
+            href="/auth/forgot-password"
             className="text-blue-500 hover:text-blue-400"
           >
             Forgot password?
@@ -107,7 +107,7 @@ export default function LoginClient() {
       <div className="text-center">
         <Text className="text-gray-400">
           Don&apos;t have an account?{' '}
-          <Link href="/src/app/app/%5Blocale%5D/auth/register" className="text-blue-500 hover:text-blue-400">
+          <Link href="/auth/register" className="text-blue-500 hover:text-blue-400">
             Sign up
           </Link>
         </Text>

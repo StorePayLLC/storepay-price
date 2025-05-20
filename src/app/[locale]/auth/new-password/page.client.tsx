@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Card, Form, Input, Button, Typography } from 'antd';
 import { LockOutlined } from '@ant-design/icons';
-import Link from 'next/link';
+import Link from '@/components/link';
 
 const { Title, Text } = Typography;
 
@@ -85,7 +85,7 @@ export default function NewPasswordClient() {
         </Form.Item>
 
         <div className="text-center">
-          <Link href="/src/app/app/%5Blocale%5D/auth/login" className="text-blue-500 hover:text-blue-400">
+          <Link href="/auth/login" className="text-blue-500 hover:text-blue-400">
             Back to sign in
           </Link>
         </div>

@@ -1,0 +1,11 @@
+mutation FaceCheck($input: faceCheckInput!) {
+    faceCheck(input: $input){
+        id
+        userId
+        preferences
+        status
+        createdAt
+        updatedAt
+        expiresAt
+    }
+}

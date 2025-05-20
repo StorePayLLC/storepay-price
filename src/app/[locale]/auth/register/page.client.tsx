@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Card, Form, Input, Button, Typography, Divider } from 'antd';
 import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
-import Link from 'next/link';
+import Link from '@/components/link';
 
 const { Title, Text } = Typography;
 
@@ -94,7 +94,7 @@ export default function RegisterClient() {
       <div className="text-center">
         <Text className="text-gray-400">
           Already have an account?{' '}
-          <Link href="/src/app/app/%5Blocale%5D/auth/login" className="text-blue-500 hover:text-blue-400">
+          <Link href="/auth/login" className="text-blue-500 hover:text-blue-400">
             Sign in
           </Link>
         </Text>
