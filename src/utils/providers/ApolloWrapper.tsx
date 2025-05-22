@@ -93,25 +93,13 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 const authLink = setContext((_, { headers }) =>
   rotateToken()
     .then((t) => {
-      if (Cookie.get('SP-REGION-ID')) {
-        return {
-          headers: {
-            ...headers,
-            'Accept-Language': i18n.locale,
-            'x-apollo-connection': 'test',
-            ['X-SP-REGION-ID']: Cookie.get('SP-REGION-ID'),
-            authorization: `Bearer ${t?.accessToken}`,
-          },
-        };
-      } else {
-        return {
-          headers: {
-            ...headers,
-            'Accept-Language': i18n.locale,
-            authorization: `Bearer ${t?.accessToken}`,
-          },
-        };
-      }
+      return {
+        headers: {
+          ...headers,
+          'Accept-Language': i18n.locale,
+          authorization: `Bearer ${t?.accessToken}`,
+        },
+      };
     })
     .catch(),
 );

@@ -1,0 +1,5 @@
+mutation MerchantCreate ($input: merchantCreateByUserInput!) {
+    merchantCreateByUser(input: $input) {
+        ...merchant
+    }
+}

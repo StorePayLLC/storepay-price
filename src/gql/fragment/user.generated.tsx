@@ -5,6 +5,7 @@ export type UserFragment = {
   __typename?: "User";
   id: string;
   firstName?: string;
+  lastName?: string;
   language?: string;
   email?: string;
   phone?: string;
@@ -21,6 +22,7 @@ export const UserFragmentDoc = gql`
   fragment user on User {
     id
     firstName
+    lastName
     language
     email
     phone

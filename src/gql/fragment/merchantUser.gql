@@ -1,0 +1,9 @@
+fragment merchantUser on MerchantUser {
+    id
+    merchantId
+    role
+    status
+    createdAt
+    updatedAt
+    userId
+}

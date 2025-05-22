@@ -2,6 +2,8 @@ import type * as Types from "../graphql";
 
 import { gql } from "@apollo/client";
 import { UserFragmentDoc } from "../fragment/user.generated";
+import { MerchantUserFragmentDoc } from "../fragment/merchantUser.generated";
+import { MerchantFragmentDoc } from "../fragment/merchant.generated";
 import * as Apollo from "@apollo/client";
 const defaultOptions = {} as const;
 export type MeQueryVariables = Types.Exact<{ [key: string]: never }>;
@@ -12,6 +14,7 @@ export type MeQuery = {
     __typename?: "User";
     id: string;
     firstName?: string;
+    lastName?: string;
     language?: string;
     email?: string;
     phone?: string;
@@ -22,6 +25,43 @@ export type MeQuery = {
     citizenIdNumber?: string;
     externalKycId?: string;
     gender?: Types.Gender;
+    merchantUsers: {
+      __typename?: "MerchantUserConnection";
+      nodes: Array<{
+        __typename?: "MerchantUser";
+        id: string;
+        merchantId?: string;
+        role: Types.UserRole;
+        status: Types.UserStatus;
+        createdAt: any;
+        updatedAt: any;
+        userId?: string;
+      }>;
+    };
+    merchants: {
+      __typename?: "MerchantConnection";
+      nodes: Array<{
+        __typename?: "Merchant";
+        id: string;
+        applicantId?: string;
+        name?: string;
+        registrationNumber?: string;
+        rejectedAt?: any;
+        status?: Types.MerchantStatus;
+        createdAt: any;
+        updatedAt: any;
+        preferences?: any;
+        email?: string;
+        phone?: string;
+        country?: string;
+        verifiedAt?: any;
+        state?: Types.State;
+        currency?: string;
+        description?: string;
+        address?: string;
+        number?: string;
+      }>;
+    };
   };
 };
 
@@ -29,9 +69,21 @@ export const MeDocument = gql`
   query Me {
     me {
       ...user
+      merchantUsers {
+        nodes {
+          ...merchantUser
+        }
+      }
+      merchants {
+        nodes {
+          ...merchant
+        }
+      }
     }
   }
   ${UserFragmentDoc}
+  ${MerchantUserFragmentDoc}
+  ${MerchantFragmentDoc}
 `;
 
 /**

@@ -1,6 +1,7 @@
 fragment user on User {
     id
     firstName
+    lastName
     language
     email
     phone

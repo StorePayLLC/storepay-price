@@ -14,6 +14,7 @@ export type UserVerifyMutation = {
     __typename?: "User";
     id: string;
     firstName?: string;
+    lastName?: string;
     language?: string;
     email?: string;
     phone?: string;

@@ -1,5 +1,15 @@
 query Me {
     me {
         ...user
+        merchantUsers {
+            nodes {
+                ...merchantUser
+            }
+        }
+        merchants {
+            nodes {
+                ...merchant
+            }
+        }
     }
 }

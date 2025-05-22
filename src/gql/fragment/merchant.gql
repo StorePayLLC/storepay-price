@@ -1,0 +1,20 @@
+fragment merchant on Merchant {
+    id
+    applicantId
+    name
+    registrationNumber
+    rejectedAt
+    status
+    createdAt
+    updatedAt
+    preferences
+    email
+    phone
+    country
+    verifiedAt
+    state
+    currency
+    description
+    address
+    number
+}

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import {Card, Form, Input, Select, Button, Avatar, Upload, Typography, Flex, Divider, Modal} from 'antd';
 import { UserOutlined, EditOutlined, CreditCardOutlined, WalletOutlined, LockOutlined } from '@ant-design/icons';
 import {useUser} from "@/utils/providers";
+import LanguageSelector from "@/components/languageSelector";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -102,32 +103,31 @@ const ProfilePage: React.FC = () => {
 
         <div className="md:w-2/3">
           <Card className="bg-[#111] border border-gray-800">
-            <Form layout="vertical">
+            <Form layout="vertical" initialValues={user} onFinish={(values) => {
+              console.log(values);
+            }}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Form.Item 
-                  label={<span className="text-gray-300">Display Name</span>} 
+                <Form.Item
+                  name="firstName"
+                  label={<span className="text-gray-300">First name</span>}
                   className="mb-4"
                 >
                   <Input 
                     prefix={<UserOutlined />} 
-                    defaultValue="John Doe" 
                     className="bg-[#1a1a1a] border-gray-700 text-white"
                   />
                 </Form.Item>
 
-                <Form.Item 
-                  label={<span className="text-gray-300">Preferred Currency</span>} 
+                <Form.Item
+                  name="lastName"
+                  label={<span className="text-gray-300">Last name</span>}
                   className="mb-4"
                 >
-                  <Select 
-                    defaultValue="usd" 
-                    className="w-full bg-[#1a1a1a] text-white"
-                  >
-                    <Option value="usd">USD - US Dollar</Option>
-                    <Option value="eur">EUR - Euro</Option>
-                    <Option value="gbp">GBP - British Pound</Option>
-                    <Option value="jpy">JPY - Japanese Yen</Option>
-                  </Select>
+                  <Input
+                    prefix={<UserOutlined />}
+                    defaultValue={user?.lastName}
+                    className="bg-[#1a1a1a] border-gray-700 text-white"
+                  />
                 </Form.Item>
 
                 <Form.Item 
@@ -135,7 +135,7 @@ const ProfilePage: React.FC = () => {
                   className="mb-4"
                 >
                   <Input 
-                    defaultValue="john.doe@example.com" 
+                    defaultValue={user?.email}
                     className="bg-[#1a1a1a] border-gray-700 text-white"
                   />
                 </Form.Item>
@@ -168,29 +168,15 @@ const ProfilePage: React.FC = () => {
                   label={<span className="text-gray-300">Language</span>} 
                   className="mb-4"
                 >
-                  <Select 
-                    defaultValue="en" 
-                    className="w-full bg-[#1a1a1a] text-white"
-                  >
-                    <Option value="en">English</Option>
-                    <Option value="es">Spanish</Option>
-                    <Option value="fr">French</Option>
-                    <Option value="de">German</Option>
-                  </Select>
+                  <LanguageSelector selected={user?.language} />
                 </Form.Item>
               </div>
-
-              <Divider className="my-4 border-gray-800" />
-
-              <Title level={5} className="text-white mb-4">
-                Connected Accounts
-              </Title>
 
               <Flex justify="flex-end" gap={12} className="mt-6">
                 <Button className="text-white border-gray-700 hover:border-gray-500">
                   Cancel
                 </Button>
-                <Button type="primary" className="bg-blue-600">
+                <Button htmlType="submit" type="primary" className="bg-blue-600">
                   Save Changes
                 </Button>
               </Flex>

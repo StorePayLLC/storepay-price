@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Card, Typography, Tag, Button, Select, DatePicker, Flex, Empty } from 'antd';
 import { FilterOutlined } from '@ant-design/icons';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/components/navigation';
 
 const { Title, Text } = Typography;
 const { RangePicker } = DatePicker;

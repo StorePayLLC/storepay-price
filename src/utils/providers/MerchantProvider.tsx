@@ -1,67 +1,37 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import React, { createContext, ReactNode, useContext, useEffect, useMemo, useState } from 'react';
+import {useUser} from "@/utils/providers/UserProvider";
+import {MeQuery} from "@/gql/query/me.generated";
 
-import { UserContext } from '@/utils/providers/UserProvider';
-import {useMeWithMerchantUsersQuery} from "@/gql/query/merchant/meWithMerchantUsers.generated";
-
-type MerchantType = {
-  id: string;
-  name: string;
-};
+type MerchantType = NonNullable<MeQuery['me']>['merchants']['nodes'][0] | undefined;
 
 type ContextType = {
-  merchant: MerchantType;
   merchants: MerchantType[];
-  fetching: boolean;
+  merchant: MerchantType;
+  changeCurrent: (id: string) => void;
 };
 
-export const MerchantContext = createContext<ContextType>({} as ContextType);
+export const MerchantContext = createContext({} as ContextType);
 
 type MerchantProviderProps = {
   children: ReactNode;
 };
 
 export default function MerchantProvider({ children }: MerchantProviderProps) {
-  const {data, loading} = useMeWithMerchantUsersQuery();
-  const [merchant, setMerchant] = useState<MerchantType>({} as MerchantType);
-  const [merchants, setMerchants] = useState<MerchantType[]>([]);
-
-  useEffect(() => {
-    if (data?.me?.merchantUsers && data?.me?.merchantUsers.nodes.length > 0) {
-      const merchants: MerchantType[] = []
-      data?.me?.merchantUsers.nodes.forEach((merchantUser) => {
-        if (merchantUser.merchant) {
-          merchants.push({
-            id: merchantUser.merchant.id,
-            name: merchantUser?.merchant?.name as string,
-          });
-        }
-      });
-      setMerchants(merchants);
-      setMerchant(merchants[0]);
+  const {user} = useUser();
+  const [merchant, setMerchant] = useState<MerchantType>(user?.merchants.nodes[0]);
+  const changeCurrent = (id: string) => {
+    const currentMerchant = user?.merchants.nodes.find((item) => item.id === id);
+    if (currentMerchant) {
+      setMerchant(currentMerchant);
     }
-  }, [data]);
-
-  if (loading) {
-    return <>Loading...</>;
   }
-
-  if (merchant && merchant.id && merchant.id !== '') {
-    return (
-      <MerchantContext.Provider
-        value={{
-          merchant,
-          merchants,
-          fetching: loading,
-        }}
-      >
-        {children}
-      </MerchantContext.Provider>
-    );
-  }
+  return (
+    <MerchantContext.Provider value={{merchant: merchant, merchants: user?.merchants.nodes || [], changeCurrent: changeCurrent}}>
+      {children}
+    </MerchantContext.Provider>
+  );
 }
-
-export const MerchantConsumer = MerchantContext.Consumer;
 
 export const useMerchant = () => useContext(MerchantContext);

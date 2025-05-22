@@ -253,6 +253,7 @@ export type Mutation = {
   faceCheck?: Maybe<Kyc>;
   kycCreate?: Maybe<Kyc>;
   kycGenerateSessionId?: Maybe<Scalars["String"]["output"]>;
+  merchantCreateByUser?: Maybe<Merchant>;
   userPasswordCreate?: Maybe<Scalars["ID"]["output"]>;
   userRegister: Scalars["ID"]["output"];
   userVerify?: Maybe<User>;
@@ -276,6 +277,10 @@ export type MutationKycCreateArgs = {
 
 export type MutationKycGenerateSessionIdArgs = {
   input: KycGenerateSessionIdInput;
+};
+
+export type MutationMerchantCreateByUserArgs = {
+  input: MerchantCreateByUserInput;
 };
 
 export type MutationUserPasswordCreateArgs = {
@@ -558,7 +563,9 @@ export type User = BaseModelInterface &
     kyc?: Maybe<Kyc>;
     kycs?: Maybe<KycConnection>;
     language?: Maybe<Scalars["String"]["output"]>;
+    lastName?: Maybe<Scalars["String"]["output"]>;
     merchantUsers: MerchantUserConnection;
+    merchants: MerchantConnection;
     offers?: Maybe<Array<Offer>>;
     phone?: Maybe<Scalars["String"]["output"]>;
     spcWallet?: Maybe<WalletCrypto>;
@@ -582,6 +589,16 @@ export type UserMerchantUsersArgs = {
   after?: InputMaybe<Scalars["String"]["input"]>;
   before?: InputMaybe<Scalars["String"]["input"]>;
   filter?: InputMaybe<MerchantUserFilter>;
+  first?: InputMaybe<Scalars["Int"]["input"]>;
+  last?: InputMaybe<Scalars["Int"]["input"]>;
+  offset?: InputMaybe<Scalars["Int"]["input"]>;
+  sort?: InputMaybe<SortFilter>;
+};
+
+export type UserMerchantsArgs = {
+  after?: InputMaybe<Scalars["String"]["input"]>;
+  before?: InputMaybe<Scalars["String"]["input"]>;
+  filter?: InputMaybe<MerchantFilter>;
   first?: InputMaybe<Scalars["Int"]["input"]>;
   last?: InputMaybe<Scalars["Int"]["input"]>;
   offset?: InputMaybe<Scalars["Int"]["input"]>;
@@ -1036,6 +1053,10 @@ export type KycCreateInput = {
 };
 
 export type KycGenerateSessionIdInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type MerchantCreateByUserInput = {
   clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
 };
 
