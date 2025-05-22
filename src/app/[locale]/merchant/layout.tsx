@@ -16,7 +16,7 @@ export default function UserLayout({children}:{children: React.ReactNode}) {
         <Layout>
 
           <MerchantSideBar />
-          <Content className="bg-[#1a1a1a]">
+          <Content className="bg-[#1a1a1a] p-6">
             <UserState />
             {children}
           </Content>

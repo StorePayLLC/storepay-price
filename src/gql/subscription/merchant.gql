@@ -1,0 +1,5 @@
+subscription Merchant($id: ID!) {
+    merchant(id: $id) {
+        ...merchant
+    }
+}

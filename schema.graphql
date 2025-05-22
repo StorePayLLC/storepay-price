@@ -3,6 +3,7 @@
 schema {
     query: Query
     mutation: Mutation
+    subscription: Subscription
 }
 
 "Requires that exactly one field must be supplied and that field must not be `null`."
@@ -461,6 +462,11 @@ type Query {
         "Sorting functionality"
         sort: SortFilter
     ): WalletInterfaceConnection!
+}
+
+type Subscription {
+    "Trigger for merchant"
+    merchant(id: ID!): Merchant
 }
 
 type Token implements BaseModelInterface & Node {

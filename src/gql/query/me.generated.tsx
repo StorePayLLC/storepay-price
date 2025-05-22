@@ -6,7 +6,10 @@ import { MerchantUserFragmentDoc } from "../fragment/merchantUser.generated";
 import { MerchantFragmentDoc } from "../fragment/merchant.generated";
 import * as Apollo from "@apollo/client";
 const defaultOptions = {} as const;
-export type MeQueryVariables = Types.Exact<{ [key: string]: never }>;
+export type MeQueryVariables = Types.Exact<{
+  merchantFilter?: Types.InputMaybe<Types.MerchantFilter>;
+  merchantUserFilter?: Types.InputMaybe<Types.MerchantUserFilter>;
+}>;
 
 export type MeQuery = {
   __typename?: "Query";
@@ -66,15 +69,18 @@ export type MeQuery = {
 };
 
 export const MeDocument = gql`
-  query Me {
+  query Me(
+    $merchantFilter: MerchantFilter
+    $merchantUserFilter: MerchantUserFilter
+  ) {
     me {
       ...user
-      merchantUsers {
+      merchantUsers(filter: $merchantUserFilter) {
         nodes {
           ...merchantUser
         }
       }
-      merchants {
+      merchants(filter: $merchantFilter) {
         nodes {
           ...merchant
         }
@@ -98,6 +104,8 @@ export const MeDocument = gql`
  * @example
  * const { data, loading, error } = useMeQuery({
  *   variables: {
+ *      merchantFilter: // value for 'merchantFilter'
+ *      merchantUserFilter: // value for 'merchantUserFilter'
  *   },
  * });
  */

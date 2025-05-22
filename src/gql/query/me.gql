@@ -1,12 +1,12 @@
-query Me {
+query Me($merchantFilter: MerchantFilter, $merchantUserFilter: MerchantUserFilter) {
     me {
         ...user
-        merchantUsers {
+        merchantUsers(filter: $merchantUserFilter) {
             nodes {
                 ...merchantUser
             }
         }
-        merchants {
+        merchants(filter: $merchantFilter) {
             nodes {
                 ...merchant
             }

@@ -451,6 +451,15 @@ export type QueryWalletsArgs = {
   sort?: InputMaybe<SortFilter>;
 };
 
+export type Subscription = {
+  __typename?: "Subscription";
+  merchant?: Maybe<Merchant>;
+};
+
+export type SubscriptionMerchantArgs = {
+  id: Scalars["ID"]["input"];
+};
+
 export type Token = BaseModelInterface &
   Node & {
     __typename?: "Token";

@@ -1,7 +1,7 @@
 'use client';
 
 import { Layout, Typography, Card, Button, List, Flex } from 'antd';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/components/navigation';
 import {
   SafetyCertificateOutlined,
   BankOutlined,
@@ -96,6 +96,7 @@ export default function RegisterClient() {
               onClick={() => {
                 create({variables: {input: {}}}).then((res) => {
                   if (res.data?.merchantCreateByUser) {
+                    router.push(`/merchant/kyb/${res.data.merchantCreateByUser.id}`)
                     window.open(res.data.merchantCreateByUser.preferences?.kyc_link, '_blank');
                   }
                 })

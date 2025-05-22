@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import {Card, Form, Input, Select, Button, Avatar, Upload, Typography, Flex, Divider, Modal} from 'antd';
+import {Card, Form, Input, Select, Button, Avatar, Upload, Typography, Flex, Divider, Modal, Descriptions} from 'antd';
 import { UserOutlined, EditOutlined, CreditCardOutlined, WalletOutlined, LockOutlined } from '@ant-design/icons';
 import {useMerchant, useUser} from "@/utils/providers";
 import LanguageSelector from "@/components/languageSelector";
 import GetStarted from "@/app/[locale]/merchant/components/getStarted";
+import dayjs from "dayjs";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -26,149 +27,60 @@ const ProfilePage: React.FC = () => {
         </Title>
 
         <div className="flex flex-col md:flex-row gap-6">
-          <div className="md:w-1/3">
-            <Card className="bg-[#111] border border-gray-800 overflow-hidden">
-              <Flex vertical align="center" className="py-4">
-                <div className="relative">
-                  <Avatar
-                    size={100}
-                    src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg"
-                    className="border-2 border-blue-500"
-                  />
-                  <Upload className="absolute bottom-0 right-0">
-                    <Button
-                      type="primary"
-                      shape="circle"
-                      icon={<EditOutlined />}
-                      size="small"
-                      className="bg-blue-600"
-                    />
-                  </Upload>
-                </div>
-                <Title level={4} className="mt-4 mb-0 text-white">
-                  {merchant.number}
-                </Title>
-                <Text type="secondary">{user?.citizenIdNumber}</Text>
-              </Flex>
-
-              <Divider className="my-3 border-gray-800" />
-
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 px-4 py-2 rounded-lg bg-[#1a1a1a]">
-                  <CreditCardOutlined className="text-blue-500 text-xl" />
-                  <div>
-                    <Text className="text-white block">Credit Card</Text>
-                    <Text type="secondary" className="text-xs">Connected</Text>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 px-4 py-2 rounded-lg bg-[#1a1a1a]">
-                  <WalletOutlined className="text-purple-500 text-xl" />
-                  <div>
-                    <Text className="text-white block">MetaMask</Text>
-                    <Text type="secondary" className="text-xs">Connected</Text>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between gap-3 px-4 py-2 rounded-lg bg-[#1a1a1a]">
-                  <div className="flex items-center gap-3">
-                    <LockOutlined className="text-amber-500 text-xl" />
-                    <div>
-                      <Text className="text-white block">Security PIN</Text>
-                      <Text type="secondary" className="text-xs">6-digit PIN</Text>
-                    </div>
-                  </div>
-                  <Button
-                    type="link"
-                    onClick={() => setPinModalVisible(true)}
-                    className="text-blue-500 hover:text-blue-400"
-                  >
-                    Change
-                  </Button>
-                </div>
-              </div>
-            </Card>
-          </div>
-          <div className="md:w-2/3">
+          <div className="md:w-full">
             <Card className="bg-[#111] border border-gray-800">
-              <Form layout="vertical" initialValues={merchant} onFinish={(values) => {
-                console.log(values);
-              }}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Form.Item
-                    name="number"
-                    label={<span className="text-gray-300">First name</span>}
-                    className="mb-4"
-                  >
-                    <Input
-                      prefix={<UserOutlined />}
-                      className="bg-[#1a1a1a] border-gray-700 text-white"
-                    />
-                  </Form.Item>
+              <Descriptions
+                layout="vertical"
+                column={{ xs: 1, sm: 2 }}
+                bordered
+                className="mb-8"
+                contentStyle={{
+                  color: 'white'
+                }}
+                labelStyle={{
+                  color: '#9ca3af'
+                }}
+              >
+                <Descriptions.Item label="Registration Number" span={2}>
+                  {merchant?.number}
+                </Descriptions.Item>
 
-                  <Form.Item
-                    name="lastName"
-                    label={<span className="text-gray-300">Last name</span>}
-                    className="mb-4"
-                  >
-                    <Input
-                      prefix={<UserOutlined />}
-                      defaultValue={user?.lastName}
-                      className="bg-[#1a1a1a] border-gray-700 text-white"
-                    />
-                  </Form.Item>
+                <Descriptions.Item label="Business Name">
+                  {merchant?.name}
+                </Descriptions.Item>
 
-                  <Form.Item
-                    label={<span className="text-gray-300">Email Address</span>}
-                    className="mb-4"
-                  >
-                    <Input
-                      defaultValue={user?.email}
-                      className="bg-[#1a1a1a] border-gray-700 text-white"
-                    />
-                  </Form.Item>
+                <Descriptions.Item label="Status">
+                  {merchant?.status}
+                </Descriptions.Item>
 
-                  <Form.Item
-                    label={<span className="text-gray-300">Time Zone</span>}
-                    className="mb-4"
-                  >
-                    <Select
-                      defaultValue="et"
-                      className="w-full bg-[#1a1a1a] text-white"
-                    >
-                      <Option value="et">Eastern Time (UTC-5)</Option>
-                      <Option value="pt">Pacific Time (UTC-8)</Option>
-                      <Option value="utc">UTC (GMT)</Option>
-                      <Option value="cet">Central European Time (UTC+1)</Option>
-                    </Select>
-                  </Form.Item>
+                <Descriptions.Item label="Submitted On">
+                  {dayjs(merchant?.createdAt).format('YYYY-MM-DD')}
+                </Descriptions.Item>
 
-                  <Form.Item
-                    label={<span className="text-gray-300">Phone Number</span>} className="mb-4"
-                  >
-                    <Input
-                      defaultValue="+1 (555) 123-4567"
-                      className="bg-[#1a1a1a] border-gray-700 text-white"
-                    />
-                  </Form.Item>
+                <Descriptions.Item label="Estimated Completion">
+                  {dayjs(merchant?.createdAt).format('YYYY-MM-DD')}
+                </Descriptions.Item>
 
-                  <Form.Item
-                    label={<span className="text-gray-300">Language</span>}
-                    className="mb-4"
-                  >
-                    <LanguageSelector selected={user?.language} />
-                  </Form.Item>
-                </div>
+                <Descriptions.Item label="Email Address">
+                  {merchant?.email}
+                </Descriptions.Item>
 
-                <Flex justify="flex-end" gap={12} className="mt-6">
-                  <Button className="text-white border-gray-700 hover:border-gray-500">
-                    Cancel
-                  </Button>
-                  <Button htmlType="submit" type="primary" className="bg-blue-600">
-                    Save Changes
-                  </Button>
-                </Flex>
-              </Form>
+                <Descriptions.Item label="Phone Number">
+                  {merchant?.phone}
+                </Descriptions.Item>
+
+                <Descriptions.Item label="Business Address" span={2}>
+                  {merchant?.address}
+                </Descriptions.Item>
+
+                <Descriptions.Item label="State">
+                  {merchant?.state}
+                </Descriptions.Item>
+
+                <Descriptions.Item label="Currency">
+                  {merchant?.currency}
+                </Descriptions.Item>
+              </Descriptions>
             </Card>
           </div>
         </div>
