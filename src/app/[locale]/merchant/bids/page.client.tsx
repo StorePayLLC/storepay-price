@@ -190,3 +190,27 @@ const BidsClient: React.FC = () => {
 };
 
 export default BidsClient;
+
+//'use client';
+//
+// import React, { useState } from 'react';
+// import {Card, Typography, Tag, Button, Select, DatePicker, Flex, Empty, Table, Skeleton} from 'antd';
+// import { FilterOutlined } from '@ant-design/icons';
+// import { useRouter } from '@/components/navigation';
+// import {useMerchantTokensQuery} from "@/gql/query/merchant/tokens.generated";
+//
+// const { Title, Text } = Typography;
+// const { RangePicker } = DatePicker;
+// const { Option } = Select;
+//
+// const MerchantTokens: React.FC = () => {
+//   const {data, loading} = useMerchantTokensQuery();
+//
+//   if (loading) return <Skeleton />;
+//
+//   return (
+//     <Table dataSource={data?.merchantTokens.nodes} />
+//   );
+// };
+//
+// export default MerchantTokens;

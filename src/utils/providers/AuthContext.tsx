@@ -48,6 +48,9 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
   const login = async () => {
     await client.resetStore();
     setAuth(true);
+    let redirect = cookies.get('redirect');
+    redirect = redirect!.slice(3);
+    router.push(redirect?.toString() || '/');
   };
 
   const toLogin = () => {

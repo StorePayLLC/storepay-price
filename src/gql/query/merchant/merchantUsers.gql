@@ -1,0 +1,7 @@
+query MerchantUsers($filter: MerchantUserFilter) {
+    merchantUsers(filter: $filter) {
+        nodes {
+            ...merchantUser
+        }
+    }
+}

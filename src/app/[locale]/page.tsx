@@ -3,6 +3,7 @@
 import { Layout, Button, Typography, Collapse } from 'antd';
 import Link from '@/components/link';
 import Image from 'next/image';
+import {useAuth} from "@/utils/providers";
 
 const { Header, Content } = Layout;
 const { Title, Text, Paragraph } = Typography;
@@ -54,6 +55,7 @@ const faqs = [
 ];
 
 export default function Home() {
+  const {isAuth, logout} = useAuth();
   return (
     <Layout className="min-h-screen bg-[#0a0a0a]">
       <Header className="bg-[#121212] flex items-center justify-between px-6 border-b border-gray-800 fixed w-full z-50">
@@ -66,16 +68,25 @@ export default function Home() {
               About us
             </Button>
           </Link>
-          <Link href="/auth/login">
-            <Button type="link" className="text-gray-300 hover:text-white">
-              Login
-            </Button>
-          </Link>
-          <Link href="/auth/register">
-            <Button type="primary" className="bg-blue-600">
-              Sign up
-            </Button>
-          </Link>
+          {isAuth ? (
+            <>
+              <Link href="/user">Profile</Link>
+              <Button type="text" onClick={() => logout()}>Logout</Button>
+            </>
+          ) : (
+            <>
+              <Link href="/auth/login">
+                <Button type="link" className="text-gray-300 hover:text-white">
+                  Login
+                </Button>
+              </Link>
+              <Link href="/auth/register">
+                <Button type="primary" className="bg-blue-600">
+                  Sign up
+                </Button>
+              </Link>
+            </>
+          )}
         </div>
       </Header>
 
@@ -89,7 +100,7 @@ export default function Home() {
             You Name the Price, We Make It Happen
           </Text>
           <div className="space-x-4">
-            <Link href="/auth/register">
+            <Link href="/user">
               <Button type="primary" size="large" className="bg-blue-600">
                 Buyer
               </Button>
@@ -148,7 +159,7 @@ export default function Home() {
             Sign up today.
           </Title>
           <div className="space-x-4">
-            <Link href="/auth/register">
+            <Link href="/user">
               <Button type="primary" size="large" className="bg-blue-600">
                 Get Started
               </Button>

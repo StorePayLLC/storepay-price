@@ -22,12 +22,12 @@ const requirements = [
   },
   {
     icon: <BankOutlined className="text-green-400" />,
-    title: 'Bank Information',
+    title: 'Email verification',
     description: 'Business bank account details for settlements and financial verification'
   },
   {
     icon: <FileTextOutlined className="text-amber-400" />,
-    title: 'Tax Documents',
+    title: 'Phone verification',
     description: 'Tax registration certificates and relevant compliance documents'
   },
   {
@@ -42,7 +42,7 @@ export default function RegisterClient() {
   const [create, {loading}] = useMerchantCreateMutation();
 
   return (
-    <Layout className="min-h-screen bg-[#0a0a0a]">
+    <Layout className="min-h-screen">
       <Content>
         <div className="max-w-4xl mx-auto px-4 py-24">
           <Title level={1} className="text-white text-center mb-4">
@@ -54,7 +54,7 @@ export default function RegisterClient() {
             security standards.
           </Paragraph>
 
-          <Card className="bg-[#111] border border-gray-800 mb-12">
+          <Card className="border border-gray-800 mb-12">
             <List
               dataSource={requirements}
               renderItem={(item) => (
@@ -88,22 +88,25 @@ export default function RegisterClient() {
           </Card>
 
           <div className="text-center">
-            <Button
-              type="primary"
-              size="large"
-              icon={<ArrowRightOutlined />}
-              className="bg-blue-600"
-              onClick={() => {
-                create({variables: {input: {}}}).then((res) => {
-                  if (res.data?.merchantCreateByUser) {
-                    router.push(`/merchant/kyb/${res.data.merchantCreateByUser.id}`)
-                    window.open(res.data.merchantCreateByUser.preferences?.kyc_link, '_blank');
-                  }
-                })
-              }}
-            >
-              Start Verification
-            </Button>
+            <div className="flex gap-4 flex-row justify-center">
+              <Button
+                type="primary"
+                size="large"
+                icon={<ArrowRightOutlined />}
+                className="bg-blue-600"
+                onClick={() => {
+                  create({variables: {input: {}}}).then((res) => {
+                    if (res.data?.merchantCreateByUser) {
+                      router.push(`/merchant/kyb/${res.data.merchantCreateByUser.id}`)
+                      window.open(res.data.merchantCreateByUser.preferences?.kyc_link, '_blank');
+                    }
+                  })
+                }}
+              >
+                Start Verification
+              </Button>
+              <Button onClick={() => router.push('/')} size="large">Cancel</Button>
+            </div>
             <Text className="text-gray-400 block mt-4">
               Estimated completion time: 10-15 minutes
             </Text>

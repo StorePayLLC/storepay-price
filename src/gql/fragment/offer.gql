@@ -1,0 +1,18 @@
+fragment offer on Offer {
+    id
+    merchantId
+    userId
+    amount
+    rate
+    currency
+    feePercent
+    status
+    number
+    expiredAt
+    confirmedAt
+    rejectedAt
+    description
+    canceledAt
+    externalId
+    externalPayload
+}

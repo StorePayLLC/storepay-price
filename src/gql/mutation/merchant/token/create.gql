@@ -1,0 +1,5 @@
+mutation TokenCreate($input: merchantTokenCreateInput!) {
+    merchantTokenCreate(input: $input) {
+        ...token
+    }
+}

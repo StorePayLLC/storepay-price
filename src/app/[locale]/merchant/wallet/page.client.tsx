@@ -9,57 +9,20 @@ import {
   WalletOutlined,
   BankOutlined,
 } from '@ant-design/icons';
+import {useMerchant} from "@/utils/providers";
+import Transactions from "@/app/[locale]/merchant/components/transactions";
 
 const { Title, Text } = Typography;
 
-const activeBids = [
-  {
-    id: 1,
-    name: 'Gaming Monitor',
-    store: 'Electronics Hub',
-    amount: '0.8',
-    expiresIn: '6h 30m',
-  },
-  {
-    id: 2,
-    name: 'Mechanical Keyboard',
-    store: 'Tech Store',
-    amount: '0.4',
-    expiresIn: '12h 45m',
-  },
-];
 
-const recentTransactions = [
-  {
-    id: 1,
-    type: 'send',
-    to: '0x1234...5678',
-    amount: '0.5',
-    date: '2024-03-15',
-  },
-  {
-    id: 2,
-    type: 'receive',
-    from: '0x8765...4321',
-    amount: '1.2',
-    date: '2024-03-14',
-  },
-  {
-    id: 3,
-    type: 'bid',
-    product: 'Wireless Headphones',
-    store: 'Tech Store',
-    amount: '0.3',
-    date: '2024-03-12',
-  },
-];
 
 const WalletClient: React.FC = () => {
   const [withdrawModalVisible, setWithdrawModalVisible] = useState(false);
   const [withdrawForm] = Form.useForm();
   const [loading, setLoading] = useState(false);
+  const {merchant} = useMerchant();
 
-  const balance = 2.5437; // ETH balance
+  const balance = 2.5437;
 
   const handleWithdraw = async () => {
     try {
@@ -80,7 +43,7 @@ const WalletClient: React.FC = () => {
     <div>
       <Flex justify="space-between" align="center" className="mb-6">
         <Title level={2} className="text-white m-0">
-          Wallet
+          {merchant?.spcWallet?.name}
         </Title>
         <Flex gap={12}>
           <Button 
@@ -108,9 +71,9 @@ const WalletClient: React.FC = () => {
             <div>
               <Text className="text-gray-400">ETH Balance</Text>
               <Title level={2} className="text-emerald-400 mt-1 mb-2">
-                2.5437 ETH
+                {merchant?.spcWallet?.balance} SPC
               </Title>
-              <Text className="text-gray-400">≈ $4,832.51 USD</Text>
+              <Text className="text-gray-400">≈ {(merchant?.spcWallet?.balance || 0) * 0.41}</Text>
             </div>
             <Flex gap={8}>
               <Button 
@@ -146,93 +109,10 @@ const WalletClient: React.FC = () => {
       </div>
 
       <Title level={4} className="text-white mt-8 mb-4">
-        Active Bids
-      </Title>
-      
-      <div className="space-y-4 mb-8">
-        {activeBids.map((bid) => (
-          <Card key={bid.id} className="bg-[#111] border border-gray-800">
-            <Flex justify="space-between" align="center">
-              <div>
-                <Title level={5} className="text-white m-0">
-                  {bid.name}
-                </Title>
-                <Text type="secondary">{bid.store}</Text>
-              </div>
-              <Flex vertical align="end">
-                <Text className="text-emerald-400 font-semibold text-lg">
-                  {bid.amount} ETH
-                </Text>
-                <Text type="secondary">Expires in {bid.expiresIn}</Text>
-              </Flex>
-            </Flex>
-          </Card>
-        ))}
-      </div>
-
-      <Title level={4} className="text-white mt-8 mb-4">
         Recent Transactions
       </Title>
       
-      <List
-        className="mb-6"
-        dataSource={recentTransactions}
-        renderItem={(item) => (
-          <List.Item className="px-4 py-3 bg-[#111] border border-gray-800 rounded-lg mb-3">
-            <Flex align="center" className="w-full" justify="space-between">
-              <Flex align="center" gap={12}>
-                {item.type === 'send' && (
-                  <Avatar className="bg-red-500 flex items-center justify-center">
-                    <ArrowUpOutlined />
-                  </Avatar>
-                )}
-                {item.type === 'receive' && (
-                  <Avatar className="bg-green-500 flex items-center justify-center">
-                    <ArrowDownOutlined />
-                  </Avatar>
-                )}
-                {item.type === 'bid' && (
-                  <Avatar className="bg-blue-500 flex items-center justify-center">
-                    <WalletOutlined />
-                  </Avatar>
-                )}
-                
-                <div>
-                  <Text className="text-white font-medium block">
-                    {item.type === 'send' 
-                      ? 'Send' 
-                      : item.type === 'receive' 
-                        ? 'Receive' 
-                        : 'Bid'}
-                  </Text>
-                  <Text type="secondary" className="text-xs">
-                    {item.type === 'send' 
-                      ? `To: ${item.to}` 
-                      : item.type === 'receive' 
-                        ? `From: ${item.from}` 
-                        : `${item.product} - ${item.store}`}
-                  </Text>
-                </div>
-              </Flex>
-
-              <Flex vertical align="end">
-                <Text 
-                  className={`font-semibold ${
-                    item.type === 'receive' 
-                      ? 'text-green-400' 
-                      : 'text-amber-400'
-                  }`}
-                >
-                  {item.type === 'receive' ? '+' : ''}{item.amount} ETH
-                </Text>
-                <Text type="secondary" className="text-xs">
-                  {item.date}
-                </Text>
-              </Flex>
-            </Flex>
-          </List.Item>
-        )}
-      />
+      <Transactions id={merchant!.spcWallet!.id as string} />
 
       <Modal
         title={

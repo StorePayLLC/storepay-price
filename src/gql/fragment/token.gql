@@ -1,0 +1,8 @@
+fragment token on Token {
+    id
+    merchantId
+    secretKey
+    publicKey
+    createdAt
+    updatedAt
+}

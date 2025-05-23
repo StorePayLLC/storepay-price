@@ -12,12 +12,12 @@ const { Title, Text } = Typography;
 const { Option } = Select;
 
 const ProfilePage: React.FC = () => {
-  const {user, loading} = useUser();
+  const {loading} = useUser();
   const [pinModalVisible, setPinModalVisible] = useState(false);
   const [form] = Form.useForm();
   const {merchant} = useMerchant();
 
-  if (!merchant && loading) return <GetStarted />;
+  if (!merchant) return <GetStarted />;
 
   if (merchant) {
     return (

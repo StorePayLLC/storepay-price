@@ -48,6 +48,11 @@ const menuItems = [
     icon: <QuestionCircleOutlined />,
     label: 'Help & Support',
   },
+  {
+    key: '/merchant/tokens',
+    icon: <QuestionCircleOutlined />,
+    label: 'Dev space',
+  },
 ];
 
 export default function MerchantSideBar() {
@@ -75,7 +80,7 @@ export default function MerchantSideBar() {
               value={merchant?.id}
               onChange={(value) => changeCurrent(value)}
               options={merchants?.map((item) => {
-                return {value: item!.id, label: item!.number};
+                return {value: item!.id, label: `${item!.number}-${item!.name}`};
               })}></Select>
           )}
           {menuItems.map((item) => (

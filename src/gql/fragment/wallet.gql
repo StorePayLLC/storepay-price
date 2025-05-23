@@ -1,0 +1,15 @@
+fragment wallet on WalletCrypto {
+    id
+    owner {
+        id
+        __typename
+    }
+    expiresAt
+    account
+    balance
+    preferences
+    currency
+    status
+    startsAt
+    name
+}

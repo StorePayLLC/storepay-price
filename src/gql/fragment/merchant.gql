@@ -17,4 +17,8 @@ fragment merchant on Merchant {
     description
     address
     number
+    spcWallet {
+        id
+        ...wallet
+    }
 }

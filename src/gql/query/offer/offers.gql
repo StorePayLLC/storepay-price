@@ -1,0 +1,12 @@
+query Offers($filter: OfferFilter, $first: Int, $after: String) {
+    offers(filter: $filter, first: $first, after: $after) {
+        sum(field: "amount")
+        pageInfo {
+            hasNextPage
+            endCursor
+        }
+        nodes {
+            ...offer
+        }
+    }
+}

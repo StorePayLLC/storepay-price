@@ -254,6 +254,8 @@ export type Mutation = {
   kycCreate?: Maybe<Kyc>;
   kycGenerateSessionId?: Maybe<Scalars["String"]["output"]>;
   merchantCreateByUser?: Maybe<Merchant>;
+  merchantTokenCreate?: Maybe<Token>;
+  merchantTokenDestroy?: Maybe<Token>;
   userPasswordCreate?: Maybe<Scalars["ID"]["output"]>;
   userRegister: Scalars["ID"]["output"];
   userVerify?: Maybe<User>;
@@ -281,6 +283,14 @@ export type MutationKycGenerateSessionIdArgs = {
 
 export type MutationMerchantCreateByUserArgs = {
   input: MerchantCreateByUserInput;
+};
+
+export type MutationMerchantTokenCreateArgs = {
+  input: MerchantTokenCreateInput;
+};
+
+export type MutationMerchantTokenDestroyArgs = {
+  input: MerchantTokenDestroyInput;
 };
 
 export type MutationUserPasswordCreateArgs = {
@@ -449,15 +459,6 @@ export type QueryWalletsArgs = {
   last?: InputMaybe<Scalars["Int"]["input"]>;
   offset?: InputMaybe<Scalars["Int"]["input"]>;
   sort?: InputMaybe<SortFilter>;
-};
-
-export type Subscription = {
-  __typename?: "Subscription";
-  merchant?: Maybe<Merchant>;
-};
-
-export type SubscriptionMerchantArgs = {
-  id: Scalars["ID"]["input"];
 };
 
 export type Token = BaseModelInterface &
@@ -1067,6 +1068,16 @@ export type KycGenerateSessionIdInput = {
 
 export type MerchantCreateByUserInput = {
   clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+};
+
+export type MerchantTokenCreateInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+  merchantId: Scalars["ID"]["input"];
+};
+
+export type MerchantTokenDestroyInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+  id: Scalars["ID"]["input"];
 };
 
 export type UserPasswordCreateInput = {

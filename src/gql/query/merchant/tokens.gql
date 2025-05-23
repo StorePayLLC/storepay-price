@@ -1,0 +1,7 @@
+query MerchantTokens($filter: TokenFilter) {
+    merchantTokens(filter: $filter) {
+        nodes {
+            ...token
+        }
+    }
+}

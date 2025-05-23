@@ -1,0 +1,12 @@
+query CryptoWallet($id: ID!) {
+    node(id: $id) {
+        ...on WalletCrypto {
+            ...wallet
+            transactions(last: 10) {
+                nodes {
+                    ...walletTransaction
+                }
+            }
+        }
+    }
+}

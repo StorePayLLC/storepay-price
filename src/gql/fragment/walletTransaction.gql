@@ -1,0 +1,20 @@
+fragment walletTransaction on Transaction {
+    id
+    amount
+    transactionAt
+    typeCode
+    sourceId
+    sourceType
+    category
+    createdAt
+    authorizedAt
+    authorizedById
+    balance
+    status
+    number
+    description
+    withdrawTransactionId
+    dueDate
+    response
+    nonce
+}

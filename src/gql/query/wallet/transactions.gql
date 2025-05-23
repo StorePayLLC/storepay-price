@@ -1,0 +1,14 @@
+query Transactions($filter: WalletTransactionFilter, $first: Int, $after: String) {
+    walletTransactions(filter: $filter, first: $first, after: $after) {
+        sum(field: "amount")
+        pageInfo {
+            hasNextPage
+            endCursor
+            hasPreviousPage
+            startCursor
+        }
+        nodes {
+            ...walletTransaction
+        }
+    }
+}

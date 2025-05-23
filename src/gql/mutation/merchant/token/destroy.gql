@@ -1,0 +1,5 @@
+mutation TokenDestroy($input: merchantTokenDestroyInput!) {
+    merchantTokenDestroy(input: $input) {
+        ...token
+    }
+}
