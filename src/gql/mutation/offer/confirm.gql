@@ -1,0 +1,5 @@
+mutation Confirm($input: offerConfirmInput!) {
+    offerConfirm(input: $input) {
+        ...offer
+    }
+}

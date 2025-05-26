@@ -1,9 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card, Typography, Tag, Button, Flex, Image, Divider, Modal, Input, Form } from 'antd';
+import {Card, Typography, Tag, Button, Flex, Image, Divider, Modal, Input, Form, App} from 'antd';
 import { ArrowLeftOutlined, ClockCircleOutlined, ShopOutlined, LockOutlined } from '@ant-design/icons';
 import Link from '@/components/link';
+import {useConfirmMutation} from "@/gql/mutation/offer/confirm.generated";
+import {useRejectMutation} from "@/gql/mutation/offer/reject.generated";
+import {useParams} from "next/navigation";
 
 const { Title, Text } = Typography;
 
@@ -31,6 +34,11 @@ const BidDetailClient: React.FC = () => {
   const [pinModalVisible, setPinModalVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [form] = Form.useForm();
+  const [confirm, {loading: confirming}] = useConfirmMutation();
+  const [reject, {loading: rejecting}] = useRejectMutation();
+  const params = useParams();
+  const {notification} = App.useApp();
+
 
   const handleConfirm = () => {
     setPinModalVisible(true);
@@ -69,7 +77,7 @@ const BidDetailClient: React.FC = () => {
   return (
     <div>
       <Flex justify="space-between" align="center" className="mb-6">
-        <Link href="/user/bids">
+        <Link href="/merchant/bids">
           <Button 
             icon={<ArrowLeftOutlined />} 
             className="border-gray-700 text-white"
@@ -78,10 +86,20 @@ const BidDetailClient: React.FC = () => {
           </Button>
         </Link>
         <Flex gap={6}>
-          <Button type="primary" danger>
+          <Button type="primary" danger loading={rejecting}
+                  onClick={() => {
+                    reject({variables: {input: {id: params.id as string}}}).then(() => {
+                      notification.info({message: 'Offer rejected'});
+                    })
+                  }}>
             Reject
           </Button>
-          <Button type="primary" className="bg-blue-600" onClick={handleConfirm}>
+          <Button type="primary" className="bg-blue-600" loading={confirming}
+                  onClick={() => {
+                    confirm({variables: {input: {id: params.id as string}}}).then(() => {
+                      notification.success({message: 'Offer confirmed successfully!'});
+                    })
+                  }}>
             Confirm
           </Button>
         </Flex>
@@ -208,8 +226,12 @@ const BidDetailClient: React.FC = () => {
           <Button 
             key="submit" 
             type="primary" 
-            loading={confirmLoading} 
-            onClick={handlePinSubmit}
+            loading={confirming}
+            onClick={() => {
+              confirm({variables: {input: {id: params.id as string}}}).then(() => {
+                notification.success({message: 'Offer confirmed successfully!'});
+              })
+            }}
             className="bg-blue-600"
           >
             Confirm

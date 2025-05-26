@@ -19,6 +19,7 @@ export type OfferFragment = {
   canceledAt?: any;
   externalId?: string;
   externalPayload?: any;
+  createdAt: any;
 };
 
 export const OfferFragmentDoc = gql`
@@ -39,5 +40,6 @@ export const OfferFragmentDoc = gql`
     canceledAt
     externalId
     externalPayload
+    createdAt
   }
 `;

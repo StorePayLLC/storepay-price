@@ -15,4 +15,5 @@ fragment offer on Offer {
     canceledAt
     externalId
     externalPayload
+    createdAt
 }

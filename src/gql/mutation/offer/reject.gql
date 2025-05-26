@@ -1,0 +1,5 @@
+mutation Reject($input: offerRejectInput!) {
+    offerReject(input: $input) {
+        ...offer
+    }
+}

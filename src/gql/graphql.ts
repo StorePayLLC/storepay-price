@@ -256,6 +256,8 @@ export type Mutation = {
   merchantCreateByUser?: Maybe<Merchant>;
   merchantTokenCreate?: Maybe<Token>;
   merchantTokenDestroy?: Maybe<Token>;
+  offerConfirm: Offer;
+  offerReject: Offer;
   userPasswordCreate?: Maybe<Scalars["ID"]["output"]>;
   userRegister: Scalars["ID"]["output"];
   userVerify?: Maybe<User>;
@@ -291,6 +293,14 @@ export type MutationMerchantTokenCreateArgs = {
 
 export type MutationMerchantTokenDestroyArgs = {
   input: MerchantTokenDestroyInput;
+};
+
+export type MutationOfferConfirmArgs = {
+  input: OfferConfirmInput;
+};
+
+export type MutationOfferRejectArgs = {
+  input: OfferRejectInput;
 };
 
 export type MutationUserPasswordCreateArgs = {
@@ -1076,6 +1086,16 @@ export type MerchantTokenCreateInput = {
 };
 
 export type MerchantTokenDestroyInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+  id: Scalars["ID"]["input"];
+};
+
+export type OfferConfirmInput = {
+  clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
+  id: Scalars["ID"]["input"];
+};
+
+export type OfferRejectInput = {
   clientMutationId?: InputMaybe<Scalars["String"]["input"]>;
   id: Scalars["ID"]["input"];
 };

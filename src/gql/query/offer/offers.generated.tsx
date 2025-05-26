@@ -38,6 +38,8 @@ export type OffersQuery = {
       canceledAt?: any;
       externalId?: string;
       externalPayload?: any;
+      createdAt: any;
+      merchant?: { __typename?: "Merchant"; name?: string; number?: string };
     }>;
   };
 };
@@ -52,6 +54,10 @@ export const OffersDocument = gql`
       }
       nodes {
         ...offer
+        merchant {
+          name
+          number
+        }
       }
     }
   }

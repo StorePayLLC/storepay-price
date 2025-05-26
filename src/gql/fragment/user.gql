@@ -13,4 +13,7 @@ fragment user on User {
     externalKycId
     gender
     language
+    spcWallet {
+        ...wallet
+    }
 }

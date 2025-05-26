@@ -7,6 +7,10 @@ query Offers($filter: OfferFilter, $first: Int, $after: String) {
         }
         nodes {
             ...offer
+            merchant {
+                name
+                number
+            }
         }
     }
 }

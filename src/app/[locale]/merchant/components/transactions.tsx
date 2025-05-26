@@ -57,7 +57,7 @@ export default function Transactions({id}: Props) {
                     : 'text-amber-400'
                 }`}
               >
-                {item.typeCode === WalletTransactionTypeCode.Debit ? '+' : ''}{item.amount} ETH
+                {item.typeCode === WalletTransactionTypeCode.Debit ? '+' : ''}{item.amount} SPC
               </Text>
               <Text type="secondary" className="text-xs">
                 {item.dueDate}
